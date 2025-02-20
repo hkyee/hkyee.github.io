@@ -1,3 +1,7 @@
-# hkyee.github.io
+# Herr Ken's personal website
 
-Test
+Purposes:
+
+1. Act as a secondary resume, with more detailed explanations on my work.
+
+
