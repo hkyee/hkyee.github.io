@@ -1,0 +1,118 @@
+.circle-container {
+  width: 200px;
+  /* Set the width of the circle (smaller radius) */
+  height: 200px;
+  /* Set the height of the circle (same as width for a perfect circle) */
+  border-radius: 50%;
+  /* Make the container circular */
+  overflow: hidden;
+  /* Hide the part of the image outside the circle */
+}
+
+.circle-img {
+  width: 100%;
+  /* Make the image fill the container */
+  height: 100%;
+  /* Make the image fill the container */
+  object-fit: cover;
+  /* Ensure the image covers the circle */
+  transform: scale(1.5);
+  object-position: center bottom;
+}
+
+.banner {
+  position: absolute;
+  transform: scale(1);
+  transform-origin: top left;
+  /*transform : translateX(25%);*/
+  /* Coincidentally, it looks centered, but not mathematically*/
+  left: 50%;
+  /* Causes the image to start from the halfway point of the container */
+  transform: translateX(-50%);
+  /* Moves the image back by 50% of the image width */
+}
+
+.container1 {
+  position: relative;
+  width: 1200px;
+  overflow: hidden;
+
+}
+
+.black-container {
+  position: absolute;
+  background-color: black;
+  height: 200px;
+  /* Adjust height */
+  width: 100%;
+  /* Optional: makes it full width */
+  max-width: 100%;
+}
+
+.socials {
+  position: absolute;
+  left: 75%;
+  top: 230px;
+  display: flex;
+  /* flexbox */
+  gap: 20px;
+  /* gap between icons*/
+}
+
+.ModelViewer {
+  display: flex;
+  justify-content: center;
+  /* Center based on Height and Width (needed for justify-content;) */
+  width: 100%;
+  height: 100%;
+}
+
+model-viewer {
+  /* Actual Height and Width for Model  */
+  width: 100%;
+  height: 100%;
+}
+
+#grabcad {
+  width: 30%;
+  height: 30%;
+}
+
+.wrapper {
+  display: flex;
+  overflow-x: auto;
+}
+
+/* Container to contain the Models */
+.container {
+  min-width: 300px;
+  height: 400px;
+}
+
+/* Scrollable items */
+.item {
+  min-width: 1000px;
+  height: 100%;
+  display: flex;
+  position: relative;
+
+  align-items: center;
+}
+
+.description {
+  height: 500px;
+  min-width: 500px;
+  text-align: justify;
+  display: flex;
+  margin-right: 500px;
+  align-items: center;
+}
+
+.vertical_separator {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #000;
+  /* Black vertical line */
+  margin: 20px;
+}
