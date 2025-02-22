@@ -78,6 +78,43 @@ model-viewer {
   height: 30%;
 }
 
+/* LeetCode's SVG might have an explicit width and height set inside leetcode.svg */
+#leetcode img {
+  width: auto;
+  height: 60px;
+}
+
+#mckl img {
+  width: 50px;
+  height: auto;
+  position: absolute;
+}
+
+#unmc img {
+  width: 50px;
+  height: auto;
+  position: absolute;
+}
+
+#keysight img {
+  width: 50px;
+  height: auto;
+  position: absolute;
+}
+
+#aerodyne img {
+  width: 50px;
+  height: auto;
+  position: absolute;
+}
+
+#comptiasecplus img {
+  width: 50px;
+  height: auto;
+  position: absolute;
+
+}
+
 .wrapper {
   display: flex;
   overflow-x: auto;
@@ -115,4 +152,8 @@ model-viewer {
   border-left: 1px solid #000;
   /* Black vertical line */
   margin: 20px;
+}
+
+.education {
+  padding-left: 70px !important;
 }
