@@ -157,3 +157,157 @@ model-viewer {
 .education {
   padding-left: 70px !important;
 }
+
+.project_title {
+  /* padding-top: 100px; */
+  display: flex;
+  justify-content: center;
+  /* Centers horizontally */
+  align-items: center;
+  /* Centers vertically */
+  color: White;
+}
+
+.gray-box {
+  width: 100%;
+  height: 200px;
+  background-color: #C0C0C0;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.timesNewRoman {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  /* Adjusts such that the dropdown menu height is same for both (clicked and hovered) */
+  margin-top: 2px;
+}
+
+/* Prevents the dropdown from being activated by a click */
+.dropdown-menu {
+  pointer-events: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  pointer-events: auto;
+}
+
+.vertical-line {
+  position: relative;
+  width: 2px;
+  height: 300px;
+  background-color: lightgray;
+  margin: 20px;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.node-first {
+  width: 15px;
+  height: 15px;
+  background-color: lightgray;
+  /* Make it a circle */
+  border-radius: 50%;
+  position: relative;
+  transform: translateY(-50%);
+}
+
+.node-last {
+  width: 15px;
+  height: 15px;
+  background-color: lightgray;
+  /* Make it a circle */
+  border-radius: 50%;
+  position: relative;
+  transform: translateY(50%);
+}
+
+.node {
+  width: 15px;
+  height: 15px;
+  background-color: lightgray;
+  /* Make it a circle */
+  border-radius: 50%;
+  position: relative;
+}
+
+.btn-toggle::before {
+  width: 1.25em;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform .35s ease;
+  transform-origin: .5em 50%;
+}
+
+/* For changing arrow direction when it is expanded  */
+/* aria-expanded is a universal attribute for dropdowns*/
+.btn-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+.btn-toggle:hover {
+  background-color: rgba(196, 255, 196, 0.5);
+}
+
+.btn-toggle-nav {
+  padding: .1875rem .5rem;
+  margin-top: .125rem;
+  margin-left: 1.25rem;
+}
+
+.background-documentation {
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  width: 100%;
+  /* margin-left: 280px; */
+}
+
+.btn-toggle-nav-items:hover {
+  background-color: rgba(196, 255, 196, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.heading {
+  font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
+  font-weight: 500;
+}
+
+.code-block {
+  color: gray;
+  width: max-content;
+  height: max-content;
+  background-color: #d4fa93;
+}
+
+/* LinkedIn Button */
+.libutton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  text-align: center;
+  outline: none;
+  text-decoration: none !important;
+  color: #ffffff !important;
+  width: 200px;
+  height: 40px;
+  border-radius: 16px;
+  background-color: #0A66C2;
+  font-family: "SF Pro Text", Helvetica, sans-serif;
+  font-size: 22px;
+}

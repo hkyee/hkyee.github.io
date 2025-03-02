@@ -1,0 +1,25 @@
+10 HTML tags used:
+1. meta
+2. link
+3. div
+4. a
+5. ul
+6. li
+7. img
+8. h2
+9. p
+10. span
+
+
+5 CSS properties used:
+1. width
+2. height
+3. transform
+4. display
+5. align-items
+
+
+Brief sentence description on JS and Bootstrap usage:
+
+Javascript is used in dotfiles.html to fix the position of the sidebar when the top navigation bar is no longer on the screen, while Bootstrap is used for the top navigation bar, with a drop-down menu.
+
