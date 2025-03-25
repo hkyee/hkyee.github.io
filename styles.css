@@ -1,313 +1,314 @@
 .circle-container {
-  width: 200px;
-  /* Set the width of the circle (smaller radius) */
-  height: 200px;
-  /* Set the height of the circle (same as width for a perfect circle) */
-  border-radius: 50%;
-  /* Make the container circular */
-  overflow: hidden;
-  /* Hide the part of the image outside the circle */
+    width: 200px;
+    /* Set the width of the circle (smaller radius) */
+    height: 200px;
+    /* Set the height of the circle (same as width for a perfect circle) */
+    border-radius: 50%;
+    /* Make the container circular */
+    overflow: hidden;
+    /* Hide the part of the image outside the circle */
 }
 
 .circle-img {
-  width: 100%;
-  /* Make the image fill the container */
-  height: 100%;
-  /* Make the image fill the container */
-  object-fit: cover;
-  /* Ensure the image covers the circle */
-  transform: scale(1.5);
-  object-position: center bottom;
+    width: 100%;
+    /* Make the image fill the container */
+    height: 100%;
+    /* Make the image fill the container */
+    object-fit: cover;
+    /* Ensure the image covers the circle */
+    transform: scale(1.5);
+    object-position: center bottom;
 }
 
 .banner {
-  position: absolute;
-  transform: scale(1);
-  transform-origin: top left;
-  /*transform : translateX(25%);*/
-  /* Coincidentally, it looks centered, but not mathematically*/
-  left: 50%;
-  /* Causes the image to start from the halfway point of the container */
-  transform: translateX(-50%);
-  /* Moves the image back by 50% of the image width */
+    position: absolute;
+    transform: scale(1);
+    transform-origin: top left;
+    /*transform : translateX(25%);*/
+    /* Coincidentally, it looks centered, but not mathematically*/
+    left: 50%;
+    /* Causes the image to start from the halfway point of the container */
+    transform: translateX(-50%);
+    /* Moves the image back by 50% of the image width */
 }
 
 .container1 {
-  position: relative;
-  width: 1200px;
-  overflow: hidden;
+    position: relative;
+    width: 1200px;
+    overflow: hidden;
 
 }
 
 .black-container {
-  position: absolute;
-  background-color: black;
-  height: 200px;
-  /* Adjust height */
-  width: 100%;
-  /* Optional: makes it full width */
-  max-width: 100%;
+    position: absolute;
+    background-color: black;
+    height: 200px;
+    /* Adjust height */
+    width: 100%;
+    /* Optional: makes it full width */
+    max-width: 100%;
 }
 
 .socials {
-  position: absolute;
-  left: 75%;
-  top: 230px;
-  display: flex;
-  /* flexbox */
-  gap: 20px;
-  /* gap between icons*/
+    position: absolute;
+    left: 75%;
+    top: 230px;
+    display: flex;
+    /* flexbox */
+    gap: 20px;
+    /* gap between icons*/
 }
 
 .ModelViewer {
-  display: flex;
-  justify-content: center;
-  /* Center based on Height and Width (needed for justify-content;) */
-  width: 100%;
-  height: 100%;
+    display: flex;
+    justify-content: center;
+    /* Center based on Height and Width (needed for justify-content;) */
+    width: 100%;
+    height: 100%;
 }
 
 model-viewer {
-  /* Actual Height and Width for Model  */
-  width: 100%;
-  height: 100%;
+    /* Actual Height and Width for Model  */
+    width: 100%;
+    height: 100%;
 }
 
 #grabcad {
-  width: 30%;
-  height: 30%;
+    width: 30%;
+    height: 30%;
 }
 
 /* LeetCode's SVG might have an explicit width and height set inside leetcode.svg */
 #leetcode img {
-  width: auto;
-  height: 60px;
+    width: auto;
+    height: 60px;
 }
 
 #mckl img {
-  width: 50px;
-  height: auto;
-  position: absolute;
+    width: 50px;
+    height: auto;
+    position: absolute;
 }
 
 #unmc img {
-  width: 50px;
-  height: auto;
-  position: absolute;
+    width: 50px;
+    height: auto;
+    position: absolute;
 }
 
 #keysight img {
-  width: 50px;
-  height: auto;
-  position: absolute;
+    width: 50px;
+    height: auto;
+    position: absolute;
 }
 
 #aerodyne img {
-  width: 50px;
-  height: auto;
-  position: absolute;
+    width: 50px;
+    height: auto;
+    position: absolute;
 }
 
 #comptiasecplus img {
-  width: 50px;
-  height: auto;
-  position: absolute;
+    width: 50px;
+    height: auto;
+    position: absolute;
 
 }
 
 .wrapper {
-  display: flex;
-  overflow-x: auto;
+    display: flex;
+    overflow-x: auto;
 }
 
 /* Container to contain the Models */
 .container {
-  min-width: 300px;
-  height: 400px;
+    min-width: 300px;
+    height: 400px;
 }
 
 /* Scrollable items */
 .item {
-  min-width: 1000px;
-  height: 100%;
-  display: flex;
-  position: relative;
+    min-width: 1000px;
+    height: 100%;
+    display: flex;
+    position: relative;
 
-  align-items: center;
+    align-items: center;
 }
 
 .description {
-  height: 500px;
-  min-width: 500px;
-  text-align: justify;
-  display: flex;
-  margin-right: 500px;
-  align-items: center;
+    height: 500px;
+    min-width: 500px;
+    text-align: justify;
+    display: flex;
+    margin-right: 500px;
+    align-items: center;
 }
 
 .vertical_separator {
-  height: 300px;
-  display: flex;
-  align-items: center;
-  border-left: 1px solid #000;
-  /* Black vertical line */
-  margin: 20px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #000;
+    /* Black vertical line */
+    margin: 20px;
 }
 
 .education {
-  padding-left: 70px !important;
+    padding-left: 70px !important;
 }
 
 .project_title {
-  /* padding-top: 100px; */
-  display: flex;
-  justify-content: center;
-  /* Centers horizontally */
-  align-items: center;
-  /* Centers vertically */
-  color: White;
+    /* padding-top: 100px; */
+    display: flex;
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+    color: White;
+    padding: 50px;
 }
 
 .gray-box {
-  width: 100%;
-  height: 200px;
-  background-color: #C0C0C0;
+    width: 100%;
+    height: 200px;
+    background-color: #C0C0C0;
 }
 
 .justify {
-  text-align: justify;
+    text-align: justify;
 }
 
 .timesNewRoman {
-  font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* Show dropdown on hover */
 .dropdown:hover .dropdown-menu {
-  display: block;
-  /* Adjusts such that the dropdown menu height is same for both (clicked and hovered) */
-  margin-top: 2px;
+    display: block;
+    /* Adjusts such that the dropdown menu height is same for both (clicked and hovered) */
+    margin-top: 2px;
 }
 
 /* Prevents the dropdown from being activated by a click */
 .dropdown-menu {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 .dropdown:hover .dropdown-menu {
-  pointer-events: auto;
+    pointer-events: auto;
 }
 
 .vertical-line {
-  position: relative;
-  width: 2px;
-  height: 300px;
-  background-color: lightgray;
-  margin: 20px;
-  margin-left: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+    position: relative;
+    width: 2px;
+    height: 300px;
+    background-color: lightgray;
+    margin: 20px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .node-first {
-  width: 15px;
-  height: 15px;
-  background-color: lightgray;
-  /* Make it a circle */
-  border-radius: 50%;
-  position: relative;
-  transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: lightgray;
+    /* Make it a circle */
+    border-radius: 50%;
+    position: relative;
+    transform: translateY(-50%);
 }
 
 .node-last {
-  width: 15px;
-  height: 15px;
-  background-color: lightgray;
-  /* Make it a circle */
-  border-radius: 50%;
-  position: relative;
-  transform: translateY(50%);
+    width: 15px;
+    height: 15px;
+    background-color: lightgray;
+    /* Make it a circle */
+    border-radius: 50%;
+    position: relative;
+    transform: translateY(50%);
 }
 
 .node {
-  width: 15px;
-  height: 15px;
-  background-color: lightgray;
-  /* Make it a circle */
-  border-radius: 50%;
-  position: relative;
+    width: 15px;
+    height: 15px;
+    background-color: lightgray;
+    /* Make it a circle */
+    border-radius: 50%;
+    position: relative;
 }
 
 .btn-toggle::before {
-  width: 1.25em;
-  line-height: 0;
-  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
-  transition: transform .35s ease;
-  transform-origin: .5em 50%;
+    width: 1.25em;
+    line-height: 0;
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+    transition: transform .35s ease;
+    transform-origin: .5em 50%;
 }
 
 /* For changing arrow direction when it is expanded  */
 /* aria-expanded is a universal attribute for dropdowns*/
 .btn-toggle[aria-expanded="true"]::before {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 .btn-toggle:hover {
-  background-color: rgba(196, 255, 196, 0.5);
+    background-color: rgba(196, 255, 196, 0.5);
 }
 
 .btn-toggle-nav {
-  padding: .1875rem .5rem;
-  margin-top: .125rem;
-  margin-left: 1.25rem;
+    padding: .1875rem .5rem;
+    margin-top: .125rem;
+    margin-left: 1.25rem;
 }
 
 .background-documentation {
-  background-color: rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-  width: 100%;
-  /* margin-left: 280px; */
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    width: 100%;
+    /* margin-left: 280px; */
 }
 
 .btn-toggle-nav-items:hover {
-  background-color: rgba(196, 255, 196, 0.2);
+    background-color: rgba(196, 255, 196, 0.2);
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 .heading {
-  font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
-  font-weight: 500;
+    font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
+    font-weight: 500;
 }
 
 .code-block {
-  color: gray;
-  width: max-content;
-  height: max-content;
-  background-color: #d4fa93;
+    color: gray;
+    width: max-content;
+    height: max-content;
+    background-color: #d4fa93;
 }
 
 /* LinkedIn Button */
 .libutton {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 7px;
-  text-align: center;
-  outline: none;
-  text-decoration: none !important;
-  color: #ffffff !important;
-  width: 200px;
-  height: 40px;
-  border-radius: 16px;
-  background-color: #0A66C2;
-  font-family: "SF Pro Text", Helvetica, sans-serif;
-  font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    text-align: center;
+    outline: none;
+    text-decoration: none !important;
+    color: #ffffff !important;
+    width: 200px;
+    height: 40px;
+    border-radius: 16px;
+    background-color: #0A66C2;
+    font-family: "SF Pro Text", Helvetica, sans-serif;
+    font-size: 22px;
 }

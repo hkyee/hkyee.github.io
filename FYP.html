@@ -1,384 +1,984 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <!-- model-viewer -->
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+    ></script>
+    <!-- CSS -->
+    <link href="styles.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="static/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="static/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="static/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="static/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="static/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="static/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="static/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="static/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="static/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="static/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="static/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="static/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="static/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="static/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- favicon end -->
 
-<head>
-  <meta charset="UTF-8">
-  <!-- bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
-  <!-- model-viewer -->
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-  <!-- CSS -->
-  <link href="styles.css" rel="stylesheet">
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="57x57" href="static/favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="static/favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="static/favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="static/favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="static/favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="static/favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="static/favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="static/favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="static/favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="static/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
-  <link rel="manifest" href="static/favicon/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-  <!-- favicon end -->
+    <!-- Support Mobile screen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Support Mobile screen -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Syntax highlighting with prism.js -->
+    <link href="themes/prism.css" rel="stylesheet" />
 
-  <title>My Webpage</title>
+    <title>My Webpage</title>
+  </head>
 
-</head>
-
-<body>
-
-  <!--Navigation Pane Top-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="static/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-        <span class="me-3">Herr Ken</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="projects.html">Projects</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Github Repositories
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="dotfiles.html">dotfiles</a></li>
-              <li><a class="dropdown-item" href="#">Repo2</a></li>
-              <li><a class="dropdown-item" href="#">Repo3</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-  <!--Navigation Pane End-->
-
-
-  <div>
-    <div class="gray-box project_title">
-      <h1 class="fw-bold">
-        Behavior-in-the-loop testing of Automated Driving System
-        (ADS) for virtual safety testing
-      </h1>
-    </div>
-    <div class="m-5">
-
-      <!-- Project Objective -->
-      <div class="fs-4">
-        Objective
-      </div>
-      <hr>
-      <p class="mb-5 fs-5 justify timesNewRoman">
-        To integrate an Autonomous Driving System (ADS) with a virtual simulation tool for scenario-based testing.
-      </p>
-
-      <!-- Project Description Start-->
-      <div class="fs-4">
-        Description
-      </div>
-      <hr>
-      <p class="mb-5 fs-5 justify timesNewRoman">
-        The advancement of Autonomous Vehicles (AVs) functionalities has led to an increase in the
-        complexity of testing methodologies to ensure AVs can operate safely and reliably in public.
-        As AVs continue to evolve, a higher number of driven miles would be required to handle
-        vehicle edge cases. This necessitates the development of more sophisticated testing procedures
-        such as testing through simulations to address a wide range of driving scenarios. This paper
-        aims to perform Behavior-in-the-Loop testing of a third-party Autonomous Driving System
-        (ADS) in a virtual simulation environment. To achieve this, an Application Programming
-        Interface (API) is established for the communication between the simulator and ADS.
-
-      </p>
-      <!-- Project Description End -->
-
-      <!-- Introduction -->
-      <div class="fs-4">
-        Introduction
-      </div>
-      <hr>
-
-      <!-- Apollo Intro -->
-
-      <!-- d-flex flex horizontally (row) -->
-      <div class="d-flex m-3 p-3 bg-light border rounded-3">
-        <!-- Apollo Logo and Name -->
-
-        <!-- justify-content-center, centers them based on flex direction -->
-        <div class="d-flex flex-column p-2 w-50 justify-content-center">
-          <div class="text-center">
-            <img src="static/apollo.png" style="width: 200px;">
-          </div>
-          <div class="fs-5 fw-bold timesNewRoman text-center">
-            Baidu Apollo (ADS)
-          </div>
-        </div>
-        <!-- Apollo Logo and Name end -->
-        <div class="p-2 w-100 fs-5 timesNewRoman justify">
-          An ADS is said to be the brain of an AV, which is responsible for handling and processing data collected
-          from
-          the vehicle's surroundings. Developed by Baidu, Apollo is built on the <span class="fw-bold">Cyber RT
-          </span>framework. The concept of
-          Apollo can be visualized as multiple modules such as Perception, Planning, Control and Prediction, acting as
-          the fundamental building blocks for ADS functions.
-
-          <div class="text-center m-3">
-            <img src="static/Apollo_8_0.png" style="width: 700px;">
-            <figcaption class="fs-5 fst-italic timesNewRoman"> Apollo ADS architecture </figcaption>
-          </div>
-
-
-        </div>
-      </div>
-      <!-- Apollo Intro End -->
-
-      <!-- IPG CarMaker Intro -->
-      <div class="d-flex m-3 mb-5 p-3 bg-light border rounded-3">
-        <!-- CarMaker Logo and Name -->
-        <div class="d-flex flex-column p-2 w-50 justify-content-center">
-          <div class="text-center">
-            <img src="static/carmaker.svg" style="width: 200px;">
-          </div>
-          <div class="fs-5 fw-bold timesNewRoman text-center">
-            IPG CarMaker (Simulator)
-          </div>
-        </div>
-        <!-- CarMaker Logo and Name end -->
-        <div class="p-2 w-100 fs-5 timesNewRoman justify">
-          IPG CarMaker is a full-fledged virtual driving environment that satisfies automotive standards. It is a
-          simulator widely used in the automotive industry to test and validate the performances of vehicles including
-          cars, motors and trucks. IPG CarMaker allows developers
-          to seamlessly test vehicles in all development stages, where it allows direct
-          human-machine interaction due to the open integration tools it provides. IPG CarMaker
-          supports the use of C, Python and MATLAB/Simulink interfaces for further expansion of
-          features.
-
-          <div class="text-center m-3">
-            <img src="static/carmakerScenarioEditor.png" style="width: 700px;">
-            <figcaption class="fs-5 fst-italic timesNewRoman"> CarMaker simulator </figcaption>
-          </div>
+  <body>
+    <!--Navigation Pane Top-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="static/logo.png"
+            alt="Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+          <span class="me-3">Herr Ken</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Github Repositories
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="dotfiles.html">dotfiles</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Repo2</a></li>
+                <li><a class="dropdown-item" href="#">Repo3</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
         </div>
       </div>
-      <!-- IPG CarMaker Intro End -->
+    </nav>
+    <!--Navigation Pane End-->
 
-      <!-- Introduction End -->
-
-
-
-      <!-- Methodology-->
-
-      <div class="fs-4">
-        Methodology
+    <div>
+      <div class="gray-box project_title">
+        <h1 class="text-center fw-bold">
+          Behavior-in-the-loop testing of Automated Driving System (ADS) for
+          virtual safety testing
+        </h1>
       </div>
-      <hr>
-
       <div class="m-5">
-        <h3 class="timesNewRoman">
-          Baidu Apollo Configuration
-        </h3>
-        <div class="row m-5">
-          <!-- First Card -->
-          <div class="col-md-4">
-            <div class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-              style="height: 300px;">
-              <div class="col p-4">
+        <!-- Project Objective -->
+        <div class="fs-4">Objective</div>
+        <hr />
+        <p class="mb-5 fs-5 justify timesNewRoman">
+          To integrate an Autonomous Driving System (ADS) with a virtual
+          simulation tool for scenario-based testing.
+        </p>
 
-                <div class="fs-5 timesNewRoman">
-                  <div class="d-flex" style="justify-content: center;">
-                    <img src="static/docker.png" style="width: 150px;">
+        <!-- Project Description Start-->
+        <div class="fs-4">Description</div>
+        <hr />
+        <p class="mb-5 fs-5 justify timesNewRoman">
+          The advancement of Autonomous Vehicles (AVs) functionalities has led
+          to an increase in the complexity of testing methodologies to ensure
+          AVs can operate safely and reliably in public. As AVs continue to
+          evolve, a higher number of driven miles would be required to handle
+          vehicle edge cases. This necessitates the development of more
+          sophisticated testing procedures such as testing through simulations
+          to address a wide range of driving scenarios. This paper aims to
+          perform Behavior-in-the-Loop testing of a third-party Autonomous
+          Driving System (ADS) in a virtual simulation environment. To achieve
+          this, an Application Programming Interface (API) is established for
+          the communication between the simulator and ADS.
+        </p>
+        <!-- Project Description End -->
+
+        <!-- Introduction -->
+        <div class="fs-4">Introduction</div>
+        <hr />
+
+        <!-- Apollo Intro -->
+
+        <!-- d-flex flex horizontally (row) -->
+        <div class="d-flex m-3 p-3 bg-light border rounded-3">
+          <!-- Apollo Logo and Name -->
+
+          <!-- justify-content-center, centers them based on flex direction -->
+          <div class="d-flex flex-column p-2 w-50 justify-content-center">
+            <div class="text-center">
+              <img src="static/apollo.png" style="width: 200px" />
+            </div>
+            <div class="fs-5 fw-bold timesNewRoman text-center">
+              Baidu Apollo (ADS)
+            </div>
+          </div>
+          <!-- Apollo Logo and Name end -->
+          <div class="p-2 w-100 fs-5 timesNewRoman justify">
+            An ADS is said to be the brain of an AV, which is responsible for
+            handling and processing data collected from the vehicle's
+            surroundings. Developed by Baidu, Apollo is built on the
+            <span class="fw-bold">Cyber RT </span>framework. The concept of
+            Apollo can be visualized as multiple modules such as Perception,
+            Planning, Control and Prediction, acting as the fundamental building
+            blocks for ADS functions.
+
+            <div class="text-center m-3">
+              <img src="static/Apollo_8_0.png" style="width: 700px" />
+              <figcaption class="fs-5 fst-italic timesNewRoman">
+                Apollo ADS architecture
+              </figcaption>
+            </div>
+          </div>
+        </div>
+        <!-- Apollo Intro End -->
+
+        <!-- IPG CarMaker Intro -->
+        <div class="d-flex m-3 mb-5 p-3 bg-light border rounded-3">
+          <!-- CarMaker Logo and Name -->
+          <div class="d-flex flex-column p-2 w-50 justify-content-center">
+            <div class="text-center">
+              <img src="static/carmaker.svg" style="width: 200px" />
+            </div>
+            <div class="fs-5 fw-bold timesNewRoman text-center">
+              IPG CarMaker (Simulator)
+            </div>
+          </div>
+          <!-- CarMaker Logo and Name end -->
+          <div class="p-2 w-100 fs-5 timesNewRoman justify">
+            IPG CarMaker is a full-fledged virtual driving environment that
+            satisfies automotive standards. It is a simulator widely used in the
+            automotive industry to test and validate the performances of
+            vehicles including cars, motors and trucks. IPG CarMaker allows
+            developers to seamlessly test vehicles in all development stages,
+            where it allows direct human-machine interaction due to the open
+            integration tools it provides. IPG CarMaker supports the use of C,
+            Python and MATLAB/Simulink interfaces for further expansion of
+            features.
+
+            <div class="text-center m-3">
+              <img
+                src="static/carmakerScenarioEditor.png"
+                style="width: 700px"
+              />
+              <figcaption class="fs-5 fst-italic timesNewRoman">
+                CarMaker simulator
+              </figcaption>
+            </div>
+          </div>
+        </div>
+        <!-- IPG CarMaker Intro End -->
+
+        <!-- Introduction End -->
+
+        <!-- Methodology-->
+
+        <div class="fs-4">Methodology</div>
+        <hr />
+
+        <div class="m-5">
+          <h3 class="timesNewRoman">Baidu Apollo Configuration</h3>
+          <div class="row m-5">
+            <!-- First Card -->
+            <div class="col-md-4">
+              <div
+                class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                style="height: 300px"
+              >
+                <div class="col p-4">
+                  <div class="fs-5 timesNewRoman">
+                    <div class="d-flex" style="justify-content: center">
+                      <img src="static/docker.png" style="width: 150px" />
+                    </div>
+                    <ul style="position: absolute; top: 200px">
+                      <li>Docker Installation</li>
+                      <li>Docker Port Mapping</li>
+                    </ul>
                   </div>
-                  <ul style="position: absolute; top: 200px;">
-                    <li> Docker Installation </li>
-                    <li> Docker Port Mapping</li>
-                  </ul>
                 </div>
+              </div>
+            </div>
+            <!-- Second Card -->
+            <div class="col-md-4">
+              <div
+                class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                style="height: 300px"
+              >
+                <div class="col p-4">
+                  <div class="fs-5 timesNewRoman">
+                    <div class="d-flex" style="justify-content: center">
+                      <img
+                        src="static/nvidia.svg"
+                        style="margin: 25px; width: 150px"
+                      />
+                    </div>
+                    <ul style="position: absolute; top: 200px">
+                      <li>NVIDIA Container Toolkit</li>
+                      <li>NVIDIA CUDA setup</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Third Card -->
+            <div class="col-md-4">
+              <div
+                class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                style="height: 300px"
+              >
+                <div class="col p-4">
+                  <div class="fs-5 timesNewRoman">
+                    <div class="d-flex" style="justify-content: center">
+                      <img
+                        src="static/apollo.png"
+                        style="margin: 25px; width: 150px; margin-top: 50px"
+                      />
+                    </div>
+                    <ul style="position: absolute; top: 200px">
+                      <li>Apollo Installation</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <h3 class="timesNewRoman">Apollo HD Map Generation</h3>
+          <div class="m-5">
+            <div class="row">
+              <div class="col-md-6">
+                <div
+                  class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                  style="height: 600px"
+                >
+                  <div class="mt-3 text-center">
+                    <h1 class="timesNewRoman">Map Conversion</h1>
+                  </div>
+
+                  <!-- Nodes and line start-->
+                  <div class="mt-5">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="d-flex flex-row justify-content-end">
+                          <div class="vertical-line">
+                            <div class="node-first"></div>
+                            <div class="node"></div>
+                            <div class="node-last"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-9">
+                        <div class="d-flex flex-row justify-content-start">
+                          <div
+                            class="d-flex flex-column"
+                            style="
+                              height: 340px;
+                              justify-content: space-between;
+                            "
+                          >
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="static/ASAM.svg"
+                                style="height: 35px; margin-right: 10px"
+                              />
+                              <h2 class="m-0">OpenDRIVE</h2>
+                            </div>
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="static/MathWorks.svg"
+                                style="height: 35px; margin-right: 10px"
+                              />
+                              <h2 class="m-0">RoadRunner</h2>
+                            </div>
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="static/apollo.png"
+                                style="height: 35px; margin-right: 10px"
+                              />
+                              <h2 class="m-0">HD Map (binary)</h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="column d-flex flex-column">
+                  <img src="static/OpenDRIVENottingham.png" />
+                  <figcaption class="fs-5 fst-italic timesNewRoman text-center">
+                    OpenDRIVE format map
+                  </figcaption>
+                  <img src="static/RoadrunnerNottingham.png" />
+                  <figcaption class="fs-5 fst-italic timesNewRoman text-center">
+                    RoadRunner format map
+                  </figcaption>
+                </div>
               </div>
 
+              <div class="row">
+                <div class="col-md-3">
+                  <img
+                    src="static/WorldFramePositionApollo.png"
+                    style="width: 100%; height: 380px"
+                  />
+                  <figcaption class="fs-5 fst-italic timesNewRoman text-center">
+                    World Frame in Apollo
+                  </figcaption>
+                </div>
+                <div class="col-md-3">
+                  <img
+                    src="static/WorldFramePositionIPG.png"
+                    style="width: 100%; height: 380px"
+                  />
+                  <figcaption class="fs-5 fst-italic timesNewRoman text-center">
+                    World Frame in IPG CarMaker
+                  </figcaption>
+                </div>
+                <div class="col-md-6">
+                  <div
+                    class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                    style="height: 400px"
+                  >
+                    <div class="mt-3 text-center">
+                      <h1 class="timesNewRoman">Map Offsets</h1>
+                    </div>
+                    <p class="timesNewRoman fs-5 m-5">
+                      After generating and importing the map into Apollo, the
+                      world frame is validated against the IPG CarMaker map to
+                      ensure alignment of their origins.This validation is
+                      essential because sensors rely on the origin as a
+                      reference point for accurate localization and
+                      environmental perception.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="timesNewRoman">IPG CarMaker Setup</h3>
+
+          <div class="m-5">
+            <div class="row">
+              <div class="col-md-6">
+                <div
+                  class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                  style="height: 560px"
+                >
+                  <div class="mt-3 text-center">
+                    <h1 class="timesNewRoman">Scenario Modelling</h1>
+                  </div>
+                  <p class="timesNewRoman fs-5 m-5">
+                    A scenario has been modeled to test the behavior of the AV.
+                    The scenario represents a stationary vehicle positioned on
+                    the vehicle path to obstruct the ego vehicle as it
+                    approaches.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="column d-flex flex-column">
+                  <img src="static/ScenarioForAVTesting.png" />
+                  <figcaption class="fs-5 fst-italic timesNewRoman text-center">
+                    Scenario for AV testing
+                  </figcaption>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="column d-flex flex-column">
+                  <img src="static/BaiduApollo'sDefinedSensorPlacement.png" />
+                  <figcaption class="fs-5 fst-italic timesNewRoman text-center">
+                    Baidu Apollo's defined sensor placement
+                  </figcaption>
+                  <img src="static/SensorMountingInIPGCarMaker.png" />
+                  <figcaption class="fs-5 fst-italic timesNewRoman text-center">
+                    Sensor Mounting in IPG CarMaker
+                  </figcaption>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div
+                  class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                  style="height: 850px"
+                >
+                  <div class="mt-3 text-center">
+                    <h1 class="timesNewRoman">Sensor Models</h1>
+                  </div>
+                  <p class="timesNewRoman fs-5 m-5">
+                    IPG CarMaker offers a wide range of sensors selection,
+                    ranging from Raw Signal Interfaces (RSI) sensors to Ideal
+                    sensors. The selected sensors are then configured and
+                    mounted on the ego vehicle, following the positions defined
+                    by Apollo.
+                  </p>
+                  <div class="m-5">
+                    <table class="table">
+                      <thead class="table-light">
+                        <tr>
+                          <th scope="col" class="col-4">Sensor</th>
+                          <th scope="col" class="col-8">Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Camera</td>
+                          <td>
+                            To obtain the traffic object type (Car, Bike,
+                            Pedestrian or Traffic sign)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Object</td>
+                          <td>To obtain the object heading</td>
+                        </tr>
+                        <tr>
+                          <td>Radar</td>
+                          <td>
+                            To obtain the width and height for Bounding Box
+                            calculation
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Inertial</td>
+                          <td>
+                            To obtain the ego vehicle's position, velocity and
+                            acceleration
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="timesNewRoman">
+            Integration between Baidu Apollo and IPG CarMaker
+          </h3>
+          <div class="m-5">
+            <div class="mb-3 text-center">
+              <img
+                src="static/IntegrationBetweenIPGCarMakerandBaiduApollo.png"
+              />
+              <figcaption class="fs-5 fst-italic timesNewRoman text-center">
+                Integration between Baidu Apollo and IPG CarMaker
+              </figcaption>
+            </div>
+            <div
+              class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+            >
+              <div class="row m-5">
+                <div class="col-md-3 text-center">
+                  <h1 class="timesNewRoman">Server</h1>
+                </div>
+                <div class="col-md-9">
+                  <p class="timesNewRoman fs-5 justify">
+                    The data transmission process implements the concept of
+                    socket programming. A server can be created with the use of
+                    Python socket library.
+                  </p>
+
+                  <pre class="pre-scrollable rounded mb-5">
+                                        <code class="language-python">
+import socket
+
+HOST = "127.0.0.1"      # localhost
+PORT = 8900             # Port Number recommended by Apollo
+
+TCPServerSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+TCPServerSocket.bind((HOST, PORT))
+TCPServerSocket.listen(1)
+
+while True:
+    connection , client_address = TCPServerSocket.accept()
+                                        </code>
+                    </pre>
+                  <p class="timesNewRoman fs-5 justify">
+                    The server is responsible for receiving Ego Vehicle and
+                    Traffic Object data. A function is defined to receive data
+                    in binary strings (Sequence of bytes), the type and length
+                    of the message. It uses Netstruct and Struct Library to
+                    unpack binary data.
+                  </p>
+                  <pre class="pre-scrollable rounded mb-5">
+                                        <code class="language-python">
+import struct
+import netstruct
+
+"""
+    Receive header length as first pack
+    Uses header length to unpack header
+    Header contains data length and message type
+    Uses data length to unpack data
+"""
+
+def recvBinMsg(self,sock):
+    binHLen = self.recvall(sock, 4)
+    headerLen = struct.unpack('!I', binHLen)
+    binHeader = self.recvall(sock, headerLen[0])
+    msgHeader = netstruct.unpack(b"!Ib$", binHeader)
+    msgLen = msgHeader[0]
+    msgType = msgHeader[1].decode('ascii')
+    return self.recvall(sock, msgLen), msgType, msgLen
+                                        </code>
+                    </pre>
+                  <p class="timesNewRoman fs-5 justify">
+                    The data received is then channeled into Apollo modules
+                    using Cyber RT. Cyber RT follows a concept of ROS, where
+                    users can publish or subscribe to channels for data
+                    communications. A Node is a computational entity that can be
+                    created to perform a specific task, including reading and
+                    writing to / from channels.
+                  </p>
+                  <div class="text-center">
+                    <img src="static/CyberRTNode.png" />
+                    <figcaption
+                      class="fs-5 fst-italic timesNewRoman text-center"
+                    >
+                      Cyber RT concept
+                    </figcaption>
+                  </div>
+                  <p class="timesNewRoman fs-5 justify">
+                    To create a node, we use Cyber RT python library.
+                  </p>
+                  <pre class="pre-scrollable rounded mb-5">
+                    <code class="language-python">
+from cyber.python.cyber_py3 import cyber
+
+Ego_node = cyber.Node("Ego__node")  # Node for Ego Vehicle Data
+Traffic_node = cyber.Node("Traffic_node") # Node for Traffic Object Data
+Control_node = cyber.Node("Control__node") # Node for Control Command Data
+                    </code>
+                </pre>
+                  <p class="timesNewRoman fs-5 justify">
+                    To create writers for a node, we need to parse the channel
+                    name, message type and the size as arguments.
+                  </p>
+                  <pre class="pre-scrollable rounded mb-5">
+                    <code class="language-python">
+"""
+    "/apollo/sensor/gnss/odometry" is channel name
+    Gps is message type
+    1 is the size of the channel
+"""
+Ego_Gps_writer = Ego_node.create_writer("/apollo/sensor/gnss/odometry",Gps,1)
+Ego_Imu_writer = Ego_node.create_writer("/apollo/sensor/gnss/imu",Imu,1)
+Ego_Heading_writer = Ego_node.create_writer("/apollo/sensor/gnss/heading",Heading,1)
+Traffic_PerceptionObstacle_writer =
+Traffic_node.create_writer("/apollo/perception/obstacles",PerceptionObstacles,1)
+                    </code>
+                </pre>
+                  <p class="timesNewRoman fs-5 justify">To write to channel:</p>
+                  <pre class="pre-scrollable rounded mb-5">
+                    <code class="language-python">
+def Gps_decode(BinMessages):
+    Gps.ParseFromString(BinMessages) # Decode Serialized Messages
+    Ego_Gps_writer.write(Gps) # Write to channel
+                    </code>
+                </pre>
+                  <p class="timesNewRoman fs-5 justify">
+                    To create reader for a node, we need to parse the channel
+                    name, message type and a callback function. The callback
+                    function is ran whenever data is received.
+                  </p>
+                  <pre class="pre-scrollable rounded mb-5">
+                    <code class="language-python">
+"""
+    "/apollo/control" is channel name
+    ControlCommand is message type
+"""
+
+ def callback(data):
+    Binary_Control_Messages = data.SerializeToString()
+
+Control_Command_reader = Control_node.create_reader("/apollo/control", ControlCommand, callback(data))
+                    </code>
+                </pre>
+                  <p class="timesNewRoman fs-5 justify">
+                    To send the serialized data (binary strings) to client:
+                  </p>
+                  <pre class="pre-scrollable rounded mb-5">
+                    <code class="language-python">
+def sendCCMsg(sock, data):
+    dataLen = len(data)
+    sock.sendall(struct.pack('!I', dataLen))
+    sock.sendall(data)
+                    </code>
+                </pre>
+                </div>
+              </div>
+            </div>
+            <div
+              class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+            >
+              <div class="row m-5">
+                <div class="col-md-3 text-center">
+                  <h1 class="timesNewRoman">Client</h1>
+                </div>
+                <div class="col-md-9">
+                  <p class="timesNewRoman fs-5 justify">
+                    Similarly, a client can be created to connect to the same
+                    host and port.
+                  </p>
+                  <pre class="pre-scrollable rounded mb-5">
+                                        <code class="language-python">
+import socket
+
+HOST = "127.0.0.1"
+PORT = 8900
+
+TCPClientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+TCPClientSocket.connect((HOST, PORT))
+                                        </code>
+                                    </pre>
+
+                  <p class="timesNewRoman fs-5 justify">
+                    The client's function is to extract sensor data from IPG
+                    CarMaker simulation, and send the data to the server. A
+                    function is created to return the Ego Vehicle data in a
+                    tuple.
+                  </p>
+                  <pre class="pre-scrollable rounded mb-5">
+                                        <code class="language-python">
+async def parseEgoVehicle(simcontrol , sequence):
+
+    from transforms3d.euler import quat2euler, euler2quat
+
+    # Ego Position
+    InertialSensor_x = await simcontrol.simio.dva_read_async("Sensor.Inertial.VehSensor_3.Pos_0.x")
+    InertialSensor_y = await simcontrol.simio.dva_read_async("Sensor.Inertial.VehSensor_3.Pos_0.y")
+    utmx = InertialSensor_x[0]
+    utmy = -InertialSensor_y[0]
+
+    # Roll, Pitch, Yaw of Ego to Quarternion
+    Vehicle_Roll = await simcontrol.simio.dva_read_async("Vhcl.Roll")
+    Vehicle_Pitch = await simcontrol.simio.dva_read_async("Vhcl.Pitch")
+    Vehicle_Yaw = await simcontrol.simio.dva_read_async("Vhcl.Yaw")
+
+    ...
+
+    qw, qx, qy, qz  = euler2quat(Vehicle_Roll[0], Vehicle_Pitch[0] , Vehicle_Yaw[0])
+
+    return (utmx, utmy, qw, qx, qy, qz, ...)
+                                        </code>
+                                    </pre>
+                  <p class="timesNewRoman fs-5 justify">
+                    Similarly, a function is created to return the Traffic
+                    Object data in a tuple.
+                  </p>
+                  <pre class="pre-scrollable rounded mb-5">
+                                        <code class="language-python">
+async def parseTrafficObjects(simcontrol , sequence):
+        objID =list()
+        objHeading=list()
+        objutmx=list()
+        objutmy=list()
+        objVelX=list()
+        objVelY=list()
+
+        nObjects = await simcontrol.simio.dva_read_async("Sensor.Camera.VehSensor_2.nObj")
+
+        for i in range(0 , int(nObjects[0])):
+
+            # Object ID
+            ObjectID_CM = await simcontrol.simio.dva_read_async("Sensor.Camera.VehSensor_2.Obj.%i.ObjID" %i)
+            objID.append(ObjectID_CM[0])
+
+            # Object heading
+            ObjectHeading_ref_Ego = await simcontrol.simio.dva_read_async("Sensor.Object.VehSensor_1.relvTgt.RefPnt.r_zyx.z")
+            EgoHeading = await simcontrol.simio.dva_read_async("Vhcl.Yaw")
+            objHeading.append(ObjectHeading_ref_Ego[0] + EgoHeading[0])         
+
+            ObjectPos_X = await simcontrol.simio.dva_read_async("Traffic.T00.tx")
+            ObjectPos_Y = await simcontrol.simio.dva_read_async("Traffic.T00.ty")
+            objutmx.append(ObjectPos_X[0])
+            objutmy.append(-ObjectPos_Y[0])
+
+            ...
+
+            # Object Velocity
+            Object_VelocityX_CM = await simcontrol.simio.dva_read_async("Traffic.T00.v_0.x")
+            Object_VelocityY_CM = await simcontrol.simio.dva_read_async("Traffic.T00.v_0.y")
+
+            objVelX.append(Object_VelocityX_CM[0])
+            objVelY.append(Object_VelocityY_CM[0])
+
+        return (objID, objHeading, objutmx, objutmy, objVelX, objVelY, ...)
+ 
+                                        </code>
+                                    </pre>
+                  <p class="timesNewRoman fs-5 justify">
+                    The data must be serialized to binary strings before sending
+                    to server. Baidu Apollo uses Google Protocol Buffers as data
+                    exchange format.
+                  </p>
+                  <pre class="pre-scrollable rounded mb-5">
+                                        <code class="language-python">
+# Import Protobuf Class
+from modules.common_msgs.localization_msgs.gps_pb2 import Gps
+# Get Ego Vehicle Data
+egoVehicle_data = await parseEgoVehicle( simcontrol=simcontrol , sequence=seq )
+# Split the data
+(seq, qw, qx, qy, qz ....) = egoVehicle_data
+
+# Create an instance of Gps class
+Gps_msg = Gps()
+Gps_msg.header.timestamp_sec = time.time()
+Gps_msg.header.sequence_num = int(seq)
+msg.localization.orientation.qw = float(qw)
+Gps_msg.localization.orientation.qx = float(qx)
+Gps_msg.localization.orientation.qy = float(qy)
+Gps_msg.localization.orientation.qz = float(qz)
+
+# Convert to binary strings
+Gps_Binary_Messages = Gps_msg.SerializeToString()
+                                        </code>
+                                    </pre>
+                  <p class="timesNewRoman fs-5 justify">
+                    Once serialized, the data can be sent.
+                  </p>
+                  <pre class="pre-scrollable rounded mb-5">
+                                        <code class="language-python">
+"""
+    Sends header length as first pack
+    Sends header (dataLen as first pack, msgType as second pack)
+    Sends data
+"""
+
+ def sendBinMsg(self, data, msgType): 
+    dataLen = len(data)
+    header = netstruct.pack(b"!Ib$", dataLen, msgType)
+    headerLen = len(header)
+
+    self.sock.sendall(struct.pack('!I', headerLen))
+    self.sock.sendall(header)
+    self.sock.sendall(data)
+                                        </code>
+                                    </pre>
+                  <p class="timesNewRoman fs-5 justify">
+                    A client has to receive Conctrol Command Data for
+                    self-driving functionality.
+                  </p>
+                  <pre class="pre-scrollable rounded mb-5">
+                                        <code class="language-python">
+# A function to get the message length
+def recvall(self, count):
+    buf = b''
+    while count:
+        newbuf = self.sock.recv(count)
+        if not newbuf: return None
+        buf += newbuf
+        count -= len(newbuf)
+    return buf
+
+# A function to receive message
+def recvMsg(self):
+    binMsgLen = self.recvall(4)
+    msgLen = struct.unpack('!I', binMsgLen)
+    return self.recvall(msgLen[0])
+
+# A function to decode data to obtain Control Command Data
+def decodeSimData(self,binMsg):
+    ccmsg = ControlCommand()
+    ccmsg.ParseFromString(binMsg)
+    return [ccmsg.throttle, ccmsg.brake, ccmsg.steering_target, ccmsg.steering_rate]
+
+# A function to receive Control Command Data
+def recvSimData(self):
+    binMsg = self.recvMsg()
+    return self.decodeSimData(binMsg)
+
+throttle, brake, steeringTarget, steeringRate = client_Control_subscriber.recvSimData()
+                                        </code>
+                                    </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Methodology End -->
+
+        <!-- Results -->
+        <div class="fs-4">Results</div>
+        <hr />
+        <div class="text-center m-5">
+          <video
+            height="600"
+            src="static/FYP_results.mp4"
+            autoplay
+            loop
+            muted
+            controls
+          ></video>
+        </div>
+        <!-- Results End -->
+        <div class="fs-4">Tools leveraged</div>
+        <hr />
+        <div class="row m-5">
+          <!-- First Card -->
+          <div class="col-md-6">
+            <div
+              class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+              style="height: 300px"
+            >
+              <div class="col p-4">
+                <div class="fs-5 timesNewRoman">
+                  <div class="d-flex" style="justify-content: center">
+                    <img src="static/bazel.svg" style="width: 200px" />
+                  </div>
+                  <p class="m-5 justify"  style="position: absolute; top: 100px">
+                    An open-source build and test tool developed by Google.
+                    Bazel supports multiple programming languages in a single
+                    project. Apollo is built using Bazel
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <!-- Second Card -->
-          <div class="col-md-4">
-            <div class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-              style="height: 300px;">
+          <div class="col-md-6">
+            <div
+              class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+              style="height: 300px"
+            >
               <div class="col p-4">
-
                 <div class="fs-5 timesNewRoman">
-                  <div class="d-flex" style="justify-content: center;">
-                    <img src="static/nvidia.svg" style="margin: 25px; width: 150px;">
+                  <div class="d-flex" style="justify-content: center">
+                    <img src="static/GoogleProtobuf.png" style="width: 200px" />
                   </div>
-                  <ul style="position: absolute; top: 200px;">
-                    <li> NVIDIA Container Toolkit </li>
-                    <li> NVIDIA CUDA setup</li>
-                  </ul>
-                </div>
-
-              </div>
-
-
-            </div>
-          </div>
-          <!-- Third Card -->
-          <div class="col-md-4">
-            <div class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-              style="height: 300px;">
-              <div class="col p-4">
-
-                <div class="fs-5 timesNewRoman">
-                  <div class="d-flex" style="justify-content: center;">
-                    <img src="static/apollo.png" style="margin: 25px; width: 150px; margin-top: 50px;">
-                  </div>
-                  <ul style="position: absolute; top: 200px;">
-                    <li> Apollo Installation</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <h3 class="timesNewRoman">
-          Apollo HD Map Generation
-        </h3>
-        <div class="m-5">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-                style="height: 600px;">
-                <div class="mt-3 text-center">
-                  <h1 class="timesNewRoman"> Map Conversion </h1>
-                </div>
-
-                <!-- Nodes and line start-->
-                <div class="mt-5">
-                  <div class="row">
-                    <div class="col-md-3">
-                      <div class="d-flex flex-row justify-content-end">
-                        <div class="vertical-line">
-                          <div class="node-first"></div>
-                          <div class="node"></div>
-                          <div class="node-last"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-9">
-                      <div class="d-flex flex-row justify-content-start">
-                        <div class="d-flex flex-column" style="height: 340px; justify-content: space-between;">
-                          <div class="d-flex align-items-center">
-                            <img src="static/ASAM.svg" style="height: 35px; margin-right: 10px;">
-                            <h2 class="m-0"> OpenDRIVE </h2>
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <img src="static/MathWorks.svg" style="height: 35px; margin-right: 10px;">
-                            <h2 class="m-0"> RoadRunner </h2>
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <img src="static/apollo.png" style="height: 35px; margin-right: 10px;">
-                            <h2 class="m-0"> HD Map (binary) </h2>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="column d-flex flex-column">
-                <img src="static/OpenDRIVENottingham.png">
-                <figcaption class="fs-5 fst-italic timesNewRoman text-center"> OpenDRIVE format map</figcaption>
-                <img src="static/RoadrunnerNottingham.png">
-                <figcaption class="fs-5 fst-italic timesNewRoman text-center"> RoadRunner format map</figcaption>
-
-              </div>
-            </div>
-
-
-            <div class="row">
-              <div class="col-md-3">
-                <img src="static/WorldFramePositionApollo.png" style="width: 100%; height: 380px;">
-                <figcaption class="fs-5 fst-italic timesNewRoman text-center">World Frame in Apollo</figcaption>
-              </div>
-              <div class="col-md-3">
-                <img src="static/WorldFramePositionIPG.png" style="width: 100%; height: 380px;">
-                <figcaption class="fs-5 fst-italic timesNewRoman text-center">World Frame in IPG CarMaker</figcaption>
-              </div>
-              <div class="col-md-6">
-                <div class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-                  style="height: 400px;">
-                  <div class="mt-3 text-center">
-                    <h1 class="timesNewRoman"> Map Offsets </h1>
-                  </div>
-                  <p class="timesNewRoman fs-5 m-5">
-                    After generating and importing the map into Apollo, the world frame is validated against the IPG
-                    CarMaker map to ensure alignment of their origins.This validation is essential because sensors rely
-                    on the origin as a reference point for accurate localization and environmental perception.
+                  <p class="m-5 justify" style="position: absolute; top: 100px"">
+                    An open-source data format for serializing structured data.
+                    It can be compiled to generate a class file for a variety of
+                    languages.
                   </p>
-
-
                 </div>
-
               </div>
-
-
             </div>
           </div>
-
         </div>
-        <h3 class="timesNewRoman">
-          IPG CarMaker Setup
-        </h3>
-
-
       </div>
-
-
-
-
-
-
-
-
-      <!-- Methodology End -->
-
-
-      <!-- Results -->
-      <!-- Results End -->
     </div>
-
-  </div>
-
-
-</body>
-
+    <script src="prism.js"></script>
+  </body>
 </html>
