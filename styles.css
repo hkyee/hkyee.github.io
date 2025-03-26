@@ -88,6 +88,10 @@ model-viewer {
     font-family: 'JetBrains Mono', monospace;
 }
 
+.difficulty_questions_solved {
+    color: gray !important;
+}
+
 #mckl img {
     width: 50px;
     height: auto;

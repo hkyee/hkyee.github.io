@@ -20,6 +20,17 @@
       type="module"
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
     ></script>
+    <!-- cal-heatmap -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/cal-heatmap/dist/cal-heatmap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/cal-heatmap/dist/cal-heatmap.css"
+    />
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/cal-heatmap/dist/plugins/Tooltip.min.js"></script>
+    <script src="https://unpkg.com/cal-heatmap/dist/plugins/LegendLite.min.js"></script>
+    <script src="https://unpkg.com/cal-heatmap/dist/plugins/CalendarLabel.min.js"></script>
     <!-- CSS -->
     <link href="styles.css" rel="stylesheet" />
     <!-- Favicon -->
@@ -415,9 +426,19 @@
             <div class="row">
               <div class="d-flex align-items-stretch">
                 <!-- Progress Circle Start-->
-                <div class="col-md-3">
+                <div
+                  class="col-md-3"
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
                   <div>
-                    <svg width="240" height="240" viewBox="0 0 120 120">
+                    <svg
+                      viewBox="0 0 120 120"
+                      style="width: 100%; height: auto"
+                    >
                       <!-- Background Circle -->
                       <circle
                         cx="60"
@@ -451,6 +472,7 @@
                         font-size="40"
                         text-anchor="middle"
                         dominant-baseline="middle"
+                        class="jetbrainsmono"
                         fill="#000"
                       ></text>
                     </svg>
@@ -463,16 +485,14 @@
                     <div class="m-3">
                       <div class="d-flex justify-content-between">
                         <h2 id="lc_easy_title" class="jetbrainsmono">Easy</h2>
-                        <h2 id="lc_easy_questions_solved" class="jetbrainsmono">
-                          9 / 12
-                        </h2>
+                        <h2
+                          id="lc_easy_questions_solved"
+                          class="jetbrainsmono difficulty_questions_solved"
+                        ></h2>
                       </div>
                       <!-- Easy Progress Bar -->
                       <div id="lc_easy_bar" class="progress" role="progressbar">
-                        <div
-                          class="progress-bar bg-success"
-                          style="width: 25%"
-                        ></div>
+                        <div class="progress-bar bg-success"></div>
                       </div>
                     </div>
 
@@ -484,10 +504,8 @@
                         </h2>
                         <h2
                           id="lc_medium_questions_solved"
-                          class="jetbrainsmono"
-                        >
-                          9 / 12
-                        </h2>
+                          class="jetbrainsmono difficulty_questions_solved"
+                        ></h2>
                       </div>
                       <!-- Medium Progress Bar -->
                       <div
@@ -495,29 +513,58 @@
                         class="progress"
                         role="progressbar"
                       >
-                        <div
-                          class="progress-bar bg-warning"
-                          style="width: 75%"
-                        ></div>
+                        <div class="progress-bar bg-warning"></div>
                       </div>
                     </div>
                     <!-- Hard -->
                     <div class="m-3">
                       <div class="d-flex justify-content-between">
                         <h2 id="lc_hard_title" class="jetbrainsmono">Hard</h2>
-                        <h2 id="lc_hard_questions_solved" class="jetbrainsmono">
-                          9 / 12
-                        </h2>
+                        <h2
+                          id="lc_hard_questions_solved"
+                          class="jetbrainsmono difficulty_questions_solved"
+                        ></h2>
                       </div>
                       <!-- Hard Progress Bar -->
                       <div id="lc_hard_bar" class="progress" role="progressbar">
-                        <div
-                          class="progress-bar bg-danger"
-                          style="width: 100%"
-                        ></div>
+                        <div class="progress-bar bg-danger"></div>
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+              <!-- HeatMap -->
+              <div
+                style="
+                  color: #282828;
+                  border-radius: 3px;
+                  padding: 1rem;
+                  overflow: hidden;
+                "
+              >
+                <div id="heatmap" class="mb-5"></div>
+                <button
+                  id="heatmapPrevious"
+                  type="button"
+                  class="btn btn-secondary"
+                >
+                  ← Previous
+                </button>
+                <button
+                  id="heatmapNext"
+                  type="button"
+                  class="btn btn-secondary"
+                >
+                  Next →
+                </button>
+                <div style="float: right; font-size: 12px">
+                  <span style="color: #768390">Less </span>
+                  <div
+                    id="heatmap-legend"
+                    class="mx-1"
+                    style="display: inline-block"
+                  ></div>
+                  <span style="color: #768390; font-size: 12px"> More</span>
                 </div>
               </div>
             </div>
@@ -646,29 +693,149 @@
 
     <!-- LeetCode JS -->
     <script>
-      let numberOfProblemSolved = 0;
-      let numberOfProblems = 0;
-
-      function setProgress(percent) {
+      function setProgress(data) {
         const circle = document.getElementById("progress");
+        const problemSolved = document.getElementById("lc_problem_solved");
+        const difficulty = 0;
+
+        pSolved =
+          data.data.matchedUser.submitStats.acSubmissionNum[difficulty].count;
+        pCount = data.data.allQuestionsCount[difficulty].count;
+        percent = pSolved / pCount;
 
         const circumference = 2 * Math.PI * 50; // 2πr (r = 50)
-        const offset = circumference - (percent / 100) * circumference;
+        const offset = circumference - percent * circumference;
 
         circle.style.strokeDashoffset = offset;
+        problemSolved.innerHTML = pSolved;
+      }
+
+      function questionsSolved(data) {
+        const listOfdict = [
+          {
+            difficulty: 1,
+            solvedID: "lc_easy_questions_solved",
+            barID: "lc_easy_bar",
+          },
+          {
+            difficulty: 2,
+            solvedID: "lc_medium_questions_solved",
+            barID: "lc_medium_bar",
+          },
+          {
+            difficulty: 3,
+            solvedID: "lc_hard_questions_solved",
+            barID: "lc_hard_bar",
+          },
+        ];
+
+        for (const object of listOfdict) {
+          pSolved =
+            data.data.matchedUser.submitStats.acSubmissionNum[object.difficulty]
+              .count;
+          pCount = data.data.allQuestionsCount[object.difficulty].count;
+          percent = (pSolved / pCount) * 100;
+          document.getElementById(object.solvedID).innerHTML =
+            pSolved + " / " + pCount;
+
+          document.querySelector(`#${object.barID} .progress-bar`).style.width =
+            percent + "%";
+        }
+      }
+
+      function generateHeatMap(data) {
+        const cal = new CalHeatmap();
+        const sourceData = Object.entries(
+          JSON.parse(data.data.matchedUser.submissionCalendar),
+        ).map(([key, value]) => ({ t: Number(key) * 1000, value: value }));
+
+        cal.paint(
+          {
+            data: {
+              source: sourceData,
+              x: "t",
+              y: "value",
+            },
+            date: {
+              start: new Date(new Date().setMonth(new Date().getMonth() - 11)),
+            },
+            range: 12,
+            scale: {
+              color: {
+                type: "threshold",
+                range: ["#a8e6cf", "#57b894", "#1f8c5a", "#0d6c3e"],
+                domain: [10, 20, 30, 40],
+              },
+            },
+            domain: {
+              type: "month",
+              gutter: 4,
+              label: { text: "MMM", textAlign: "start", position: "top" },
+            },
+            subDomain: {
+              type: "ghDay",
+              radius: 2,
+              width: 11,
+              height: 11,
+              gutter: 4,
+            },
+            itemSelector: "#heatmap",
+          },
+          [
+            [
+              Tooltip,
+              {
+                text: function (date, value, dayjsDate) {
+                  return (
+                    (value ? value : "No") +
+                    " submissions on " +
+                    dayjsDate.format("dddd, MMMM D, YYYY")
+                  );
+                },
+              },
+            ],
+            [
+              LegendLite,
+              {
+                includeBlank: true,
+                itemSelector: "#heatmap-legend",
+                radius: 2,
+                width: 11,
+                height: 11,
+                gutter: 4,
+              },
+            ],
+            [
+              CalendarLabel,
+              {
+                width: 30,
+                textAlign: "start",
+                text: () =>
+                  dayjs.weekdaysShort().map((d, i) => (i % 2 == 0 ? "" : d)),
+                padding: [25, 0, 0, 0],
+              },
+            ],
+          ],
+        );
+
+        document
+          .getElementById("heatmapPrevious")
+          .addEventListener("click", function () {
+            cal.previous();
+          });
+        document
+          .getElementById("heatmapNext")
+          .addEventListener("click", function () {
+            cal.next();
+          });
       }
 
       fetch("https://my-worker.yhken126.workers.dev/leetcode")
         .then((response) => response.json())
         .then((data) => {
-          numberOfProblemSolved =
-            data.data.matchedUser.submitStats.acSubmissionNum[0].count;
-          numberOfProblems = data.data.allQuestionsCount[0].count;
-          percent = (numberOfProblemSolved / numberOfProblems) * 100;
-          setProgress(percent); // Change the percentage dynamically
-
-          document.getElementById("lc_problem_solved").innerHTML =
-            numberOfProblemSolved;
+          questionsSolved(data);
+          setProgress(data); // Change the percentage dynamically
+          generateHeatMap(data);
         });
     </script>
     <!-- LeetCode JS end -->
