@@ -413,63 +413,113 @@
               </a>
             </div>
             <div class="row">
-              <!-- Progress Circle Start-->
-              <div class="col-md-3">
-                <div>
-                  <svg width="240" height="240" viewBox="0 0 120 120">
-                    <!-- Background Circle -->
-                    <circle
-                      cx="60"
-                      cy="60"
-                      r="50"
-                      stroke="#ddd"
-                      stroke-width="10"
-                      fill="none"
-                    />
+              <div class="d-flex align-items-stretch">
+                <!-- Progress Circle Start-->
+                <div class="col-md-3">
+                  <div>
+                    <svg width="240" height="240" viewBox="0 0 120 120">
+                      <!-- Background Circle -->
+                      <circle
+                        cx="60"
+                        cy="60"
+                        r="50"
+                        stroke="#ddd"
+                        stroke-width="10"
+                        fill="none"
+                      />
 
-                    <!-- Progress Circle -->
-                    <circle
-                      id="progress"
-                      cx="60"
-                      cy="60"
-                      r="50"
-                      stroke="#4CAF50"
-                      stroke-width="10"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-dasharray="314"
-                      stroke-dashoffset="314"
-                      transform="rotate(-90 60 60)"
-                    />
+                      <!-- Progress Circle -->
+                      <circle
+                        id="progress"
+                        cx="60"
+                        cy="60"
+                        r="50"
+                        stroke="#4CAF50"
+                        stroke-width="10"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-dasharray="314"
+                        stroke-dashoffset="314"
+                        transform="rotate(-90 60 60)"
+                      />
 
-                    <!-- Percentage Text -->
-                    <text
-                      id="lc_problem_solved"
-                      x="60"
-                      y="65"
-                      font-size="40"
-                      text-anchor="middle"
-                      dominant-baseline="middle"
-                      fill="#000"
-                    ></text>
-                  </svg>
-                </div>
-              </div>
-              <!-- Progress Circle End -->
-              <div class="col-md-9">
-                <div class="m-5">
-                  <div class="d-flex justify-content-between">
-                    <h2 id="lc_easy_title" class="jetbrainsmono">Easyl</h2>
-                    <h2 id="questions_solved">9 / 12</h2>
+                      <!-- Percentage Text -->
+                      <text
+                        id="lc_problem_solved"
+                        x="60"
+                        y="65"
+                        font-size="40"
+                        text-anchor="middle"
+                        dominant-baseline="middle"
+                        fill="#000"
+                      ></text>
+                    </svg>
                   </div>
+                </div>
+                <!-- Progress Circle End -->
+                <div class="col-md-9">
+                  <div class="mx-5">
+                    <!-- Easy -->
+                    <div class="m-3">
+                      <div class="d-flex justify-content-between">
+                        <h2 id="lc_easy_title" class="jetbrainsmono">Easy</h2>
+                        <h2 id="lc_easy_questions_solved" class="jetbrainsmono">
+                          9 / 12
+                        </h2>
+                      </div>
+                      <!-- Easy Progress Bar -->
+                      <div id="lc_easy_bar" class="progress" role="progressbar">
+                        <div
+                          class="progress-bar bg-success"
+                          style="width: 25%"
+                        ></div>
+                      </div>
+                    </div>
 
-                  <h2 id="lc_medium_title">Medium</h2>
-
-                  <h2 id="lc_hard_title">Hard</h2>
+                    <!-- Medium -->
+                    <div class="m-3">
+                      <div class="d-flex justify-content-between">
+                        <h2 id="lc_medium_title" class="jetbrainsmono">
+                          Medium
+                        </h2>
+                        <h2
+                          id="lc_medium_questions_solved"
+                          class="jetbrainsmono"
+                        >
+                          9 / 12
+                        </h2>
+                      </div>
+                      <!-- Medium Progress Bar -->
+                      <div
+                        id="lc_medium_bar"
+                        class="progress"
+                        role="progressbar"
+                      >
+                        <div
+                          class="progress-bar bg-warning"
+                          style="width: 75%"
+                        ></div>
+                      </div>
+                    </div>
+                    <!-- Hard -->
+                    <div class="m-3">
+                      <div class="d-flex justify-content-between">
+                        <h2 id="lc_hard_title" class="jetbrainsmono">Hard</h2>
+                        <h2 id="lc_hard_questions_solved" class="jetbrainsmono">
+                          9 / 12
+                        </h2>
+                      </div>
+                      <!-- Hard Progress Bar -->
+                      <div id="lc_hard_bar" class="progress" role="progressbar">
+                        <div
+                          class="progress-bar bg-danger"
+                          style="width: 100%"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div class="col-md-9"></div>
             </div>
           </div>
         </div>

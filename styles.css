@@ -85,7 +85,7 @@ model-viewer {
 }
 
 .jetbrainsmono {
-    font-family: 'JetBrains Mono', serif;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 #mckl img {
@@ -315,4 +315,8 @@ html {
     background-color: #0A66C2;
     font-family: "SF Pro Text", Helvetica, sans-serif;
     font-size: 22px;
+}
+
+.progress {
+    height: 10px;
 }
