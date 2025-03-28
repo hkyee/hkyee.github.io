@@ -16,3 +16,8 @@ This is done in to obtain Leetcode statistics, while allowing Cross Origin Resou
 3. wrangler init my-worker
 4. edit index.js
 5. wrangler deploy
+
+
+Issues:
+1. Zooming in or out of page scales wrongly
+2. Mobile version does not work

@@ -1,0 +1,250 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <!-- model-viewer -->
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+    ></script>
+    <!-- CSS -->
+    <link href="styles.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="static/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="static/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="static/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="static/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="static/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="static/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="static/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="static/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="static/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="static/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="static/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="static/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="static/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="static/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- favicon end -->
+
+    <!-- Support Mobile screen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Syntax highlighting with prism.js -->
+    <link href="themes/prism.css" rel="stylesheet" />
+
+    <title>My Webpage</title>
+  </head>
+
+  <body>
+    <!--Navigation Pane Top-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="static/logo.png"
+            alt="Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+          <span class="me-3">Herr Ken</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Github Repositories
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="dotfiles.html">dotfiles</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Repo2</a></li>
+                <li><a class="dropdown-item" href="#">Repo3</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!--Navigation Pane End-->
+
+    <div>
+      <div class="gray-box project_title">
+        <h1 class="text-center fw-bold">
+          Temperature Measurement System with Built-in Memory
+        </h1>
+      </div>
+
+      <div class="m-5">
+        <!-- Project Objective -->
+        <div class="fs-4">Objective</div>
+        <hr />
+        <p class="mb-5 fs-5 justify timesNewRoman">
+          To design a real-time temperature measurement system using Spartan-3E
+          with Xilinx XC3S500E FPGA.
+        </p>
+
+        <!-- Project Description Start-->
+        <div class="fs-4">Description</div>
+        <hr />
+        <p class="mb-5 fs-5 justify timesNewRoman">
+          This project focuses on programming a FPGA with VHDL to process
+          temperature data bits, store temperature data, and display temperature
+          value.
+        </p>
+
+        <!-- Project Description End -->
+
+        <!-- Project Introduction Start -->
+        <div class="fs-4">Introduction</div>
+        <hr />
+        <div class="m-5">
+          <h3 class="timesNewRoman">Hardware involved:</h3>
+
+          <div class="d-flex m-3 p-3 bg-light border rounded-3">
+            <div class="row m-5">
+              <div class="col-md-4">
+                <img
+                  src="static/KtypeThermocouple.jpg"
+                  alt=""
+                  style="width: 500px"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="text-center">
+                  <h3>K-type Thermocouple</h3>
+                </div>
+                <div
+                  class="d-flex flex-column justify-content-center"
+                  style="height: 100%"
+                >
+                  <p class="mb-5 fs-5 justify timesNewRoman">
+                    To measure the surrounding temperature and convert into
+                    corresponding analog voltage. The data is then fed to the
+                    Analog-to-Digital Converter (ADC) MAX6675 that converts
+                    temperature data to data bits.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Introduction End -->
+
+        <div class="fs-4">Methodology</div>
+        <hr />
+        <p class="mb-5 fs-5 justify timesNewRoman"></p>
+      </div>
+    </div>
+  </body>
+</html>
