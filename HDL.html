@@ -210,13 +210,14 @@
         <div class="m-5">
           <h3 class="timesNewRoman">Hardware involved:</h3>
 
-          <div class="d-flex m-3 p-3 bg-light border rounded-3">
+          <!-- K-type thermoncouple -->
+          <div class="m-3 p-3 bg-light border rounded-3">
             <div class="row m-5">
-              <div class="col-md-4">
+              <div class="col-md-4 text-center">
                 <img
                   src="static/KtypeThermocouple.jpg"
                   alt=""
-                  style="width: 500px"
+                  style="height: 300px"
                 />
               </div>
               <div class="col-md-8">
@@ -227,24 +228,494 @@
                   class="d-flex flex-column justify-content-center"
                   style="height: 100%"
                 >
-                  <p class="mb-5 fs-5 justify timesNewRoman">
+                  <p class="mb-5 fs-5 justify timesNewRoman text-center">
                     To measure the surrounding temperature and convert into
-                    corresponding analog voltage. The data is then fed to the
-                    Analog-to-Digital Converter (ADC) MAX6675 that converts
-                    temperature data to data bits.
+                    corresponding analog voltage.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MAX6675 -->
+          <div class="m-3 p-3 bg-light border rounded-3">
+            <div class="row m-5">
+              <div class="col-md-4 text-center">
+                <img src="static/MAX6675.png" alt="" style="height: 300px" />
+              </div>
+              <div class="col-md-8">
+                <div class="text-center">
+                  <h3>MAX6675 ADC</h3>
+                </div>
+                <div
+                  class="d-flex flex-column justify-content-center"
+                  style="height: 100%"
+                >
+                  <p class="mb-5 fs-5 justify timesNewRoman text-center">
+                    The data is then fed to the Analog-to-Digital Converter
+                    (ADC) MAX6675 that converts temperature data to data bits.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spartan-3E board -->
+          <div class="m-3 p-3 bg-light border rounded-3">
+            <div class="row m-5">
+              <div class="col-md-4 text-center">
+                <img
+                  src="static/Spartan3EStarterKitFPGABoard.jpg"
+                  alt=""
+                  style="height: 300px"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="text-center">
+                  <h3>Spartan-3E board</h3>
+                </div>
+                <div
+                  class="d-flex flex-column justify-content-center"
+                  style="height: 100%"
+                >
+                  <p class="mb-5 fs-5 justify timesNewRoman text-center">
+                    Equipped with Xilinx XC3S500E FPGA for processing data bits.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 6 digit 7 Segment Display -->
+
+          <div class="m-3 p-3 bg-light border rounded-3">
+            <div class="row m-5">
+              <div class="col-md-4 text-center">
+                <img
+                  src="static/sevenSegmentDisplay.png"
+                  alt=""
+                  style="height: 300px"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="text-center">
+                  <h3>6-Digit 7-Segment Display</h3>
+                </div>
+                <div
+                  class="d-flex flex-column justify-content-center"
+                  style="height: 100%"
+                >
+                  <p class="mb-5 fs-5 justify timesNewRoman text-center">
+                    To display temperature value up to 2 decimal places
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RS232 Cable  -->
+          <div class="m-3 p-3 bg-light border rounded-3">
+            <div class="row m-5">
+              <div class="col-md-4 text-center">
+                <img src="static/RS232Cable.png" alt="" style="height: 300px" />
+              </div>
+              <div class="col-md-8">
+                <div class="text-center">
+                  <h3>RS232 Cable</h3>
+                </div>
+                <div
+                  class="d-flex flex-column justify-content-center"
+                  style="height: 100%"
+                >
+                  <p class="mb-5 fs-5 justify timesNewRoman text-center">
+                    To display temperature in a desktop PuTTY terminal.
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         <!-- Project Introduction End -->
 
         <div class="fs-4">Methodology</div>
         <hr />
-        <p class="mb-5 fs-5 justify timesNewRoman"></p>
+        <div class="m-5">
+          <!-- SPI Master -->
+          <div
+            class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="row m-5">
+              <div class="col-md-3 text-center">
+                <h1 class="timesNewRoman">SPI Master</h1>
+              </div>
+              <div class="col-md-9">
+                <p class="timesNewRoman fs-5 justify">
+                  SPI Master is responsible for handling communication between
+                  Spartan-3E and MAX6675. SPI Master is developed to only read
+                  the incoming data bits from MAX6675, no write operation is
+                  needed.
+                </p>
+                <p class="timesNewRoman fs-5 justify">
+                  A process is desgined to accumulate incoming data bits from
+                  MISO pin and assigns them to a single 16-bit vector. The
+                  process starts by detecting a Falling Edge on a clock (iSCK).
+                  The process appends the input data bit and shifts all existing
+                  bits to the left by one position.
+                </p>
+                <img src="static/ShiftingOperation.png" alt="" />
+                <pre class="pre-scrollable rounded mb-5">
+                    <code class="language-vhdl">
+-- Shift register process
+
+process (Reset, iReset, iSCK)
+	begin
+	if Reset = '1' or iReset = '1' then
+		iNoBitsReceived <= (others => '0');
+        -- State Machine 
+		presState <= stIdle;
+    -- Detect Falling Edge of SPI Clock
+	elsif falling_edge(iSCK) then
+        -- Counts the number of bits received and Update State Machine
+		iNoBitsReceived <= iNoBitsReceived + '1';
+		presState <= nextState;
+		if iEnableDataOut = '1' then
+			irx_data <= iShiftRegister;
+		else
+            -- Shifting operation
+			iShiftRegister <= iShiftRegister(14 downto 0) & miso;
+		end if;
+		
+	end if;
+end process;
+
+rx_data <= irx_data;
+                    </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <!-- SPI Master End -->
+          <!-- Data Converter Start -->
+          <div
+            class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="row m-5">
+              <div class="col-md-3 text-center">
+                <h1 class="timesNewRoman">Data Converter</h1>
+              </div>
+              <div class="col-md-9">
+                <p class="timesNewRoman fs-5 justify">
+                  The bits received from MAX6675 are in binary form. A Data
+                  Converter is needed to convert binary data to Binary Coded
+                  Decimal (BCD) values, for displaying data on 6-Digit 7-Segment
+                  Display.
+                </p>
+                <p class="timesNewRoman fs-5 justify">
+                  To convert binary to BCD, we use a
+                  <span class="fw-bold"> Double Dabble Process </span>. This
+                  process can be understood as a Shift-and-Add-3 method.
+                </p>
+                <p class="timesNewRoman fs-5 justify">
+                  The Double Dabble method works in iterations. For every
+                  iteration, it starts by shifting each bit of Rx_data, starting
+                  from the MSB to an empty 16-bit signal (iBCD). It then checks
+                  every 4 bits in iBCD if it is greater than 4. This is because
+                  for every BCD, 1001 or 9 is the maximum number we can get.
+                  When we are shifting each bit, it essentially means that we
+                  are multiplying BCD by 2. Therefore, if iBCD is greater than
+                  4, we need to have a carryout. This can be explained in the
+                  Table below.
+                </p>
+                <div class="d-flex justify-content-center">
+                  <table
+                    class="table text-center table-bordered table-hover"
+                    style="width: 800px"
+                  >
+                    <thead>
+                      <tr class="table-light" style="font-size: 20px">
+                        <th scope="col">Decimal</th>
+                        <th scope="col">BCD</th>
+                        <th scope="col">BCD after multiplying by 2</th>
+                        <th scope="col">CarryOut</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>0</td>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>0001</td>
+                        <td>0010</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>0010</td>
+                        <td>0100</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>0011</td>
+                        <td>0110</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>0100</td>
+                        <td>1000</td>
+                        <td>0</td>
+                      </tr>
+                      <tr class="table-primary">
+                        <td>5</td>
+                        <td>0101</td>
+                        <td>0000</td>
+                        <td class="fw-bold text-danger">1</td>
+                      </tr>
+                      <tr class="table-primary">
+                        <td>6</td>
+                        <td>0110</td>
+                        <td>0010</td>
+                        <td class="fw-bold text-danger">1</td>
+                      </tr>
+                      <tr class="table-primary">
+                        <td>7</td>
+                        <td>0111</td>
+                        <td>0100</td>
+                        <td class="fw-bold text-danger">1</td>
+                      </tr>
+                      <tr class="table-primary">
+                        <td>8</td>
+                        <td>1000</td>
+                        <td>0110</td>
+                        <td class="fw-bold text-danger">1</td>
+                      </tr>
+                      <tr class="table-primary">
+                        <td>9</td>
+                        <td>1001</td>
+                        <td>1000</td>
+                        <td class="fw-bold text-danger">1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p class="timesNewRoman fs-5 justify">
+                  When any 4 bits of iBCD are greater than 4, we add 3 to iBCD.
+                  This is because the result of adding 3 perfectly matches the
+                  value of BCD after multiplying by 2. This is explained in the
+                  illustration below.
+                </p>
+                <div class="text-center">
+                  <img src="static/DoubleDabble.png" alt="" />
+                </div>
+                <p class="timesNewRoman fs-5 justify">
+                  Once we have BCD values, we can display the temperature data
+                  in 6-Digit 7-segment display by mapping them with each
+                  segment.
+                </p>
+                <pre class="pre-scrollable rounded mb-5">
+                    <code class="language-vhdl">
+-- Double Dabble Process
+process(rx_data, systemclock)						
+begin	
+	if systemclock'event and systemclock = '1' then
+		if iStart = '1' then
+			irx_data <= rx_data(11 downto 2);	
+            -- Start to count number of bits
+			iBitCount <= iBitCount + '1';			
+			ibcd <= (others => '0');
+		elsif iBitCount = "1011" then
+			iBitCount <= "0000";
+		elsif iBitCount /= "0000" then
+            -- Adds 3 if BCD value is greater than 4
+			if ibcd(3 downto 0) > "0100" and iAdded(0) = '0' then
+				ibcd(3 downto 0) <= ibcd(3 downto 0) + "0011";
+				iAdded(0) <= '1';
+			elsif ibcd(7 downto 4) > "0100" and iAdded(1) = '0' then
+				ibcd(7 downto 4) <= ibcd(7 downto 4) + "0011";
+				iAdded(1) <= '1';
+			elsif ibcd(11 downto 8) > "0100" and iAdded(2) = '0'  then
+				ibcd(11 downto 8) <= ibcd(11 downto 8) + "0011";
+				iAdded(2) <= '1';
+			elsif ibcd(15 downto 12) > "0100" and iAdded(3) = '0' then
+				ibcd(15 downto 12) <= ibcd(15 downto 12) + "0011";
+				iAdded(3) <= '1';
+			else
+				--The shifting occurs here
+				ibcd <= ibcd (14 downto 0) & irx_data(9);
+				irx_data <= irx_data(8 downto 0) & '0';
+				iBitCount <= iBitCount + '1';
+				iAdded <= (others => '0');
+			end if;
+		end if;
+	end if;
+end process;
+                    </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <!-- Data Converter End -->
+          <!-- LCD Controller Start -->
+          <div
+            class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="row m-5">
+              <div class="col-md-3 text-center">
+                <h1 class="timesNewRoman">LCD Controller</h1>
+              </div>
+              <div class="col-md-9">
+                <p class="timesNewRoman fs-5 justify">
+                  LCD Controller handles the boot up process of LCD, and
+                  displays the temperature value up to 2 decimal places on the
+                  onboard LCD screen.
+                </p>
+                <p class="timesNewRoman fs-5 justify">
+                  To initialise the LCD screen, a state machine is designed to
+                  illustrate the process. The variable <var>i</var> is used as a
+                  counter to count the clock cycles.
+                </p>
+                <div class="text-center">
+                  <img src="static/LCDStateMachine.png" alt="" />
+                </div>
+                <pre class="pre-scrollable rounded mb-5">
+                    <code class="language-vhdl">
+power_on_initialize: process(systemclock, reset, init_init) 
+begin
+	if(reset='1') then
+		init_state <= idle;
+	elsif(systemclock='1' and systemclock'event) then
+		case init_state is
+			when idle =>
+				if(init_init = '1') then
+					init_state <= fifteenms;
+					i <= 0;
+				else
+					init_state <= idle;
+					i <= i + 1;
+				end if;
+			when fifteenms =>
+				if(i = 750000) then			-- 750,000 clock cycles
+					init_state <= s1;
+					i <= 0;
+				else
+					init_state <= fifteenms;
+					i <= i + 1;
+				end if;
+			when s1 =>
+				if(i = 11) then				-- 12 Clock cycles
+					init_state<=s2;
+					i <= 0;
+				else
+					init_state<=s1;
+					i <= i + 1;
+				end if;
+			when s2 =>
+				if(i = 205000) then			-- 205,000 clock cycles
+					init_state<=s3;
+					i <= 0;
+				else
+					init_state<=s2;
+					i <= i + 1;
+				end if;
+			when s3 =>
+				if(i = 11) then				-- 12 clock cycles
+                    ...
+        end case;
+	end if;
+end process power_on_initialize;
+                    </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <!-- LCD Controller End -->
+          <!-- DPRAM start -->
+          <div
+            class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="row m-5">
+              <div class="col-md-3 text-center">
+                <h1 class="timesNewRoman">DPRAM</h1>
+              </div>
+              <div class="col-md-9">
+                <p class="timesNewRoman fs-5 justify">
+                  Dual Port RAM is integrated to store the last measured
+                  temperature value. A single address is used for data storage,
+                  which users can write the temperature value into the memory
+                  address, and correspondingly read the stored temperature
+                  value. The temperature that is being read must be displayed on
+                  the onboard LCD screen.
+                </p>
+                <p class="timesNewRoman fs-5 justify">
+                  A test bench is created to test writing and reading operation.
+                </p>
+                <h5 class="mt-5 text-decoration-underline">
+                  Entity Declaration
+                </h5>
+                <p class="timesNewRoman fs-5 justify">
+                  The DPRAM entity with ports declaration is shown in Table
+                  below.
+                </p>
+                <div class="d-flex justify-content-center">
+                  <table
+                    class="table text-center table-bordered table-hover"
+                    style="width: 700px"
+                  >
+                    <thead>
+                      <tr class="table-light" style="font-size: 20px">
+                        <th scope="col">Port</th>
+                        <th scope="col">I/O</th>
+                        <th scope="col">Data Type</th>
+                        <th scope="col">Function</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><var>ena</var></td>
+                        <td>In</td>
+                        <td>STD_LOGIC</td>
+                        <td>Enable A pin. Set to HIGH to write.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="text-center">
+                  <img src="static/" alt="" />
+                </div>
+                <pre class="pre-scrollable rounded mb-5">
+                    <code class="language-vhdl">
+
+                    </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <script src="prism.js"></script>
+    <script>
+      Prism.languages.vhdl = {
+        comment: /--.*/, // Matches single-line comments
+        string: {
+          pattern: /"[^"]*"/, // Matches quoted strings
+          greedy: true,
+        },
+        keyword:
+          /\b(?:architecture|begin|end|entity|process|signal|variable|if|else|elsif|case|when|loop|while|for|generate|wait|port|map|component|use|library|is|of|in|out|downto|to|others|open)\b/i,
+        operator: /<=|:=|=>|[<>]=?|[-+*/&|]/,
+        number: /\b\d+(_\d+)*(\.\d+(_\d+)*)?([eE][-+]?\d+(_\d+)*)?\b/,
+        boolean: /\b(?:true|false)\b/i,
+        type: /\b(?:std_logic|std_logic_vector|bit|bit_vector|integer|natural|positive|real|boolean|time)\b/i,
+        function: /\b[a-zA-Z_]\w*(?=\()/,
+        punctuation: /[(){}[\],;.:]/,
+      };
+    </script>
   </body>
 </html>
