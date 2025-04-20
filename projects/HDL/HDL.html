@@ -21,78 +21,78 @@
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
     ></script>
     <!-- CSS -->
-    <link href="styles.css" rel="stylesheet" />
+    <link href="/static/css/styles.css" rel="stylesheet" />
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
       sizes="57x57"
-      href="static/favicon/apple-icon-57x57.png"
+      href="/static/favicon/apple-icon-57x57.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="60x60"
-      href="static/favicon/apple-icon-60x60.png"
+      href="/static/favicon/apple-icon-60x60.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="72x72"
-      href="static/favicon/apple-icon-72x72.png"
+      href="/static/favicon/apple-icon-72x72.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="76x76"
-      href="static/favicon/apple-icon-76x76.png"
+      href="/static/favicon/apple-icon-76x76.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="114x114"
-      href="static/favicon/apple-icon-114x114.png"
+      href="/static/favicon/apple-icon-114x114.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="120x120"
-      href="static/favicon/apple-icon-120x120.png"
+      href="/static/favicon/apple-icon-120x120.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="144x144"
-      href="static/favicon/apple-icon-144x144.png"
+      href="/static/favicon/apple-icon-144x144.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="152x152"
-      href="static/favicon/apple-icon-152x152.png"
+      href="/static/favicon/apple-icon-152x152.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="static/favicon/apple-icon-180x180.png"
+      href="/static/favicon/apple-icon-180x180.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="static/favicon/android-icon-192x192.png"
+      href="/static/favicon/android-icon-192x192.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="static/favicon/favicon-32x32.png"
+      href="/static/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="96x96"
-      href="static/favicon/favicon-96x96.png"
+      href="/static/favicon/favicon-96x96.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="static/favicon/favicon-16x16.png"
+      href="/static/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="static/favicon/manifest.json" />
+    <link rel="manifest" href="/static/favicon/manifest.json" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
@@ -102,7 +102,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Syntax highlighting with prism.js -->
-    <link href="themes/prism.css" rel="stylesheet" />
+    <link href="/projects/static/css/prism.css" rel="stylesheet" />
 
     <title>My Webpage</title>
   </head>
@@ -111,9 +111,9 @@
     <!--Navigation Pane Top-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/index.html">
           <img
-            src="static/logo.png"
+            src="/static/img/logo.png"
             alt="Logo"
             width="30"
             height="30"
@@ -135,12 +135,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
+              <a class="nav-link active" aria-current="page" href="/index.html"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="projects.html">Projects</a>
+              <a class="nav-link" href="/projects/index.html">Projects</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -154,9 +154,19 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="dotfiles.html">dotfiles</a>
+                  <a
+                    class="dropdown-item"
+                    href="/githubRepos/dotfiles/dotfiles.html"
+                    >dotfiles</a
+                  >
                 </li>
-                <li><a class="dropdown-item" href="#">Repo2</a></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/githubRepos/HackTheBox/hackthebox.html"
+                    >HackTheBox</a
+                  >
+                </li>
                 <li><a class="dropdown-item" href="#">Repo3</a></li>
               </ul>
             </li>
@@ -215,7 +225,7 @@
             <div class="row m-5">
               <div class="col-md-4 text-center">
                 <img
-                  src="static/KtypeThermocouple.jpg"
+                  src="/projects/HDL/static/img/KtypeThermocouple.jpg"
                   alt=""
                   style="height: 300px"
                 />
@@ -241,7 +251,11 @@
           <div class="m-3 p-3 bg-light border rounded-3">
             <div class="row m-5">
               <div class="col-md-4 text-center">
-                <img src="static/MAX6675.png" alt="" style="height: 300px" />
+                <img
+                  src="/projects/HDL/static/img/MAX6675.png"
+                  alt=""
+                  style="height: 300px"
+                />
               </div>
               <div class="col-md-8">
                 <div class="text-center">
@@ -265,7 +279,7 @@
             <div class="row m-5">
               <div class="col-md-4 text-center">
                 <img
-                  src="static/Spartan3EStarterKitFPGABoard.jpg"
+                  src="/projects/HDL/static/img/Spartan3EStarterKitFPGABoard.jpg"
                   alt=""
                   style="height: 300px"
                 />
@@ -291,7 +305,7 @@
             <div class="row m-5">
               <div class="col-md-4 text-center">
                 <img
-                  src="static/sevenSegmentDisplay.png"
+                  src="/projects/HDL/static/img/sevenSegmentDisplay.png"
                   alt=""
                   style="height: 300px"
                 />
@@ -316,7 +330,11 @@
           <div class="m-3 p-3 bg-light border rounded-3">
             <div class="row m-5">
               <div class="col-md-4 text-center">
-                <img src="static/RS232Cable.png" alt="" style="height: 300px" />
+                <img
+                  src="/projects/HDL/static/img/RS232Cable.png"
+                  alt=""
+                  style="height: 300px"
+                />
               </div>
               <div class="col-md-8">
                 <div class="text-center">
@@ -361,7 +379,10 @@
                   The process appends the input data bit and shifts all existing
                   bits to the left by one position.
                 </p>
-                <img src="static/ShiftingOperation.png" alt="" />
+                <img
+                  src="/projects/HDL/static/img/ShiftingOperation.png"
+                  alt=""
+                />
                 <pre class="pre-scrollable rounded mb-5">
                     <code class="language-vhdl">
 -- Shift register process
@@ -510,7 +531,7 @@ rx_data <= irx_data;
                   illustration below.
                 </p>
                 <div class="text-center">
-                  <img src="static/DoubleDabble.png" alt="" />
+                  <img src="/projects/HDL/static/img/DoubleDabble.png" alt="" />
                 </div>
                 <p class="timesNewRoman fs-5 justify">
                   Once we have BCD values, we can display the temperature data
@@ -580,7 +601,10 @@ end process;
                   counter to count the clock cycles.
                 </p>
                 <div class="text-center">
-                  <img src="static/LCDStateMachine.png" alt="" />
+                  <img
+                    src="/projects/HDL/static/img/LCDStateMachine.png"
+                    alt=""
+                  />
                 </div>
                 <pre class="pre-scrollable rounded mb-5">
                     <code class="language-vhdl">
@@ -699,7 +723,7 @@ end process power_on_initialize;
         </div>
       </div>
     </div>
-    <script src="prism.js"></script>
+    <script src="/projects/static/js/prism.js"></script>
     <script>
       Prism.languages.vhdl = {
         comment: /--.*/, // Matches single-line comments

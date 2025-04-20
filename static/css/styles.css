@@ -110,7 +110,7 @@ html {
 
 .socials {
   position: absolute;
-  left: 75%;
+  right: 2%;
   top: 230px;
   display: flex;
   /* flexbox */
@@ -158,9 +158,9 @@ model-viewer {
   height: 100%;
 }
 
-#grabcad {
-  width: 30%;
-  height: 30%;
+#grabcad img {
+  width: auto;
+  height: 40px;
 }
 
 @media (max-width: 768px) {
@@ -427,11 +427,15 @@ model-viewer {
 
 /* Navigation bar START */
 
+.dropdown-menu {
+  margin-top: 0 !important;
+}
+
 /* Show dropdown on hover */
 .dropdown:hover .dropdown-menu {
   display: block;
   /* Adjusts such that the dropdown menu height is same for both (clicked and hovered) */
-  margin-top: 2px;
+  margin-top: 0px;
 }
 
 /* Prevents the dropdown from being activated by a click */

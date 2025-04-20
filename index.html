@@ -32,78 +32,78 @@
     <script src="https://unpkg.com/cal-heatmap/dist/plugins/LegendLite.min.js"></script>
     <script src="https://unpkg.com/cal-heatmap/dist/plugins/CalendarLabel.min.js"></script>
     <!-- CSS -->
-    <link href="styles.css" rel="stylesheet" />
+    <link href="/static/css/styles.css" rel="stylesheet" />
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
       sizes="57x57"
-      href="static/favicon/apple-icon-57x57.png"
+      href="/static/favicon/apple-icon-57x57.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="60x60"
-      href="static/favicon/apple-icon-60x60.png"
+      href="/static/favicon/apple-icon-60x60.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="72x72"
-      href="static/favicon/apple-icon-72x72.png"
+      href="/static/favicon/apple-icon-72x72.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="76x76"
-      href="static/favicon/apple-icon-76x76.png"
+      href="/static/favicon/apple-icon-76x76.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="114x114"
-      href="static/favicon/apple-icon-114x114.png"
+      href="/static/favicon/apple-icon-114x114.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="120x120"
-      href="static/favicon/apple-icon-120x120.png"
+      href="/static/favicon/apple-icon-120x120.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="144x144"
-      href="static/favicon/apple-icon-144x144.png"
+      href="/static/favicon/apple-icon-144x144.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="152x152"
-      href="static/favicon/apple-icon-152x152.png"
+      href="/static/favicon/apple-icon-152x152.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="static/favicon/apple-icon-180x180.png"
+      href="/static/favicon/apple-icon-180x180.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="static/favicon/android-icon-192x192.png"
+      href="/static/favicon/android-icon-192x192.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="static/favicon/favicon-32x32.png"
+      href="/static/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="96x96"
-      href="static/favicon/favicon-96x96.png"
+      href="/static/favicon/favicon-96x96.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="static/favicon/favicon-16x16.png"
+      href="/static/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="static/favicon/manifest.json" />
+    <link rel="manifest" href="/static/favicon/manifest.json" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
@@ -125,9 +125,9 @@
     <!--Navigation Pane Top-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/index.html">
           <img
-            src="static/logo.png"
+            src="/static/img/logo.png"
             alt="Logo"
             width="30"
             height="30"
@@ -149,12 +149,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
+              <a class="nav-link active" aria-current="page" href="/index.html"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="projects.html">Projects</a>
+              <a class="nav-link" href="/projects/index.html">Projects</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -168,10 +168,24 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="dotfiles.html">dotfiles</a>
+                  <a
+                    class="dropdown-item"
+                    href="/githubRepos/dotfiles/dotfiles.html"
+                    >dotfiles</a
+                  >
                 </li>
-                <li><a class="dropdown-item" href="#">Repo2</a></li>
-                <li><a class="dropdown-item" href="#">Repo3</a></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/githubRepos/HackTheBox/hackthebox.html"
+                    >HackTheBox</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/githubRepos/"
+                    >PersonalScripts</a
+                  >
+                </li>
               </ul>
             </li>
           </ul>
@@ -197,7 +211,7 @@
       <!-- Banner Start-->
       <div class="black-container"></div>
       <div class="banner">
-        <img src="static/kali_banner.jpeg" />
+        <img src="/static/img/kali_banner.jpeg" />
       </div>
 
       <!-- Banner End-->
@@ -205,7 +219,7 @@
       <div class="container-fluid px-4 py-5 px-md-5">
         <!-- Profile Picture Start-->
         <div class="circle-container">
-          <img src="static/me.png" class="circle-img" />
+          <img src="/static/img/me.png" class="circle-img" />
         </div>
         <!-- Profile Picture End-->
 
@@ -213,25 +227,25 @@
         <div class="socials">
           <!-- LinkedIn-->
           <a href="https://www.linkedin.com/in/yee-herr-ken-54610b142/">
-            <img src="static/linkedin.svg" />
+            <img src="/static/img/linkedin.svg" />
           </a>
           <!-- LinkedIn End-->
 
           <!-- X -->
           <a href="https://x.com/_h3rr_">
-            <img src="static/twitter-x.svg" />
+            <img src="/static/img/twitter-x.svg" />
           </a>
           <!-- X End-->
 
           <!-- Instagram -->
           <a href="https://www.instagram.com/herrk.en/">
-            <img src="static/instagram.svg" />
+            <img src="/static/img/instagram.svg" />
           </a>
           <!-- Instagram End-->
 
           <!-- Github-->
           <a href="https://github.com/hkyee">
-            <img src="static/github.svg" />
+            <img src="/static/img/github.svg" />
           </a>
           <!-- Github End-->
         </div>
@@ -247,7 +261,7 @@
             about cybersecurity, ethical hacking, and problem-solving.
           </p>
           <span class="nottinghamlogo">
-            <img src="static/nottingham.png" />
+            <img src="/static/img/nottingham.png" />
           </span>
         </div>
 
@@ -258,7 +272,7 @@
         >
           Follow on
           <div class="linkedinFollowBtn">
-            <img src="static/linkedin2.svg" />
+            <img src="/static/img/linkedin2.svg" />
           </div>
         </a>
       </div>
@@ -279,7 +293,7 @@
             id="unmc"
             style="position: absolute"
           >
-            <img src="static/unmc.svg" />
+            <img src="/static/img/unmc.svg" />
           </a>
           <div class="fs-4 fw-bold education">
             University of Nottingham Malaysia
@@ -300,7 +314,7 @@
         <!-- MCKL -->
         <div class="d-flex justify-content-between">
           <a href="https://mckl.edu.my/" id="mckl" style="position: absolute">
-            <img src="static/mckl.svg" />
+            <img src="/static/img/mckl.svg" />
           </a>
           <div class="fs-4 fw-bold education">
             Methodist College Kuala Lumpur
@@ -334,7 +348,7 @@
             id="keysight"
             style="position: absolute"
           >
-            <img src="static/keysight.svg" />
+            <img src="/static/img/keysight.svg" />
           </a>
           <div class="fs-4 fw-bold education">
             Process Mechanical Engineer Intern
@@ -369,7 +383,7 @@
             id="aerodyne"
             style="position: absolute"
           >
-            <img src="static/aerodyne.png" />
+            <img src="/static/img/aerodyne.png" />
           </a>
           <div class="fs-4 fw-bold education">Project Engineering Intern</div>
           <div class="fs-4 fw-bold education timeframe">
@@ -408,7 +422,7 @@
               id="comptiasecplus"
               style="position: absolute"
             >
-              <img src="static/SecurityPlusLogoCertificate.png" />
+              <img src="/static/img/SecurityPlusLogoCertificate.png" />
             </a>
             <div class="fs-4 fw-bold education">CompTIA Security+</div>
             <div class="fs-4 fw-bold education timeframe">February 2025</div>
@@ -426,7 +440,7 @@
               id="cs50x"
               style="position: absolute"
             >
-              <img src="static/harvardU.svg" />
+              <img src="/static/img/harvardU.svg" />
             </a>
             <div class="fs-4 fw-bold education">
               CS50x: Introduction to Computer Science
@@ -449,7 +463,7 @@
             <div class="mb-5">
               <a href="https://leetcode.com/u/Cofffy/">
                 <div id="leetcode">
-                  <img src="static/leetcode.svg" />
+                  <img src="/static/img/leetcode.svg" />
                 </div>
               </a>
             </div>
@@ -579,7 +593,10 @@
                   overflow: hidden;
                 "
               >
-                <div id="heatmap" class="mb-5"></div>
+                <div
+                  id="heatmap"
+                  class="mb-5 d-flex justify-content-center"
+                ></div>
                 <button
                   id="heatmapPrevious"
                   type="button"
@@ -615,7 +632,7 @@
             <h2>
               <a href="https://grabcad.com/herr.ken.yee-1/models">
                 <div id="grabcad">
-                  <img src="static/grabcad.svg" />
+                  <img src="/static/img/grabcad.svg" />
                 </div>
               </a>
             </h2>
@@ -627,7 +644,7 @@
                 <div class="container">
                   <div class="ModelViewer">
                     <model-viewer
-                      src="static/Petronas_KeyChain.gltf"
+                      src="/static/img/Petronas_KeyChain.gltf"
                       ar
                       ar-modes="webxr scene-viewer quick-look"
                       camera-controls
@@ -670,7 +687,7 @@
                 <div class="container">
                   <div class="ModelViewer">
                     <model-viewer
-                      src="static/marine_gearbox_yee_herr_ken.glb"
+                      src="/static/img/marine_gearbox_yee_herr_ken.glb"
                       ar
                       ar-modes="webxr scene-viewer quick-look"
                       camera-controls
@@ -723,7 +740,7 @@
                 <div class="container">
                   <div class="ModelViewer">
                     <model-viewer
-                      src="static/additive_toy.glb"
+                      src="/static/img/additive_toy.glb"
                       ar
                       ar-modes="webxr scene-viewer quick-look"
                       camera-controls

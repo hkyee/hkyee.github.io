@@ -21,78 +21,78 @@
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
     ></script>
     <!-- CSS -->
-    <link href="styles.css" rel="stylesheet" />
+    <link href="/static/css/styles.css" rel="stylesheet" />
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
       sizes="57x57"
-      href="static/favicon/apple-icon-57x57.png"
+      href="/static/favicon/apple-icon-57x57.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="60x60"
-      href="static/favicon/apple-icon-60x60.png"
+      href="/static/favicon/apple-icon-60x60.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="72x72"
-      href="static/favicon/apple-icon-72x72.png"
+      href="/static/favicon/apple-icon-72x72.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="76x76"
-      href="static/favicon/apple-icon-76x76.png"
+      href="/static/favicon/apple-icon-76x76.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="114x114"
-      href="static/favicon/apple-icon-114x114.png"
+      href="/static/favicon/apple-icon-114x114.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="120x120"
-      href="static/favicon/apple-icon-120x120.png"
+      href="/static/favicon/apple-icon-120x120.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="144x144"
-      href="static/favicon/apple-icon-144x144.png"
+      href="/static/favicon/apple-icon-144x144.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="152x152"
-      href="static/favicon/apple-icon-152x152.png"
+      href="/static/favicon/apple-icon-152x152.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="static/favicon/apple-icon-180x180.png"
+      href="/static/favicon/apple-icon-180x180.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="static/favicon/android-icon-192x192.png"
+      href="/static/favicon/android-icon-192x192.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="static/favicon/favicon-32x32.png"
+      href="/static/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="96x96"
-      href="static/favicon/favicon-96x96.png"
+      href="/static/favicon/favicon-96x96.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="static/favicon/favicon-16x16.png"
+      href="/static/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="static/favicon/manifest.json" />
+    <link rel="manifest" href="/static/favicon/manifest.json" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
@@ -102,7 +102,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Syntax highlighting with prism.js -->
-    <link href="themes/prism.css" rel="stylesheet" />
+    <link href="/projects/static/css/prism.css" rel="stylesheet" />
 
     <title>My Webpage</title>
   </head>
@@ -111,9 +111,9 @@
     <!--Navigation Pane Top-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/index.html">
           <img
-            src="static/logo.png"
+            src="/static/img/logo.png"
             alt="Logo"
             width="30"
             height="30"
@@ -135,12 +135,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
+              <a class="nav-link active" aria-current="page" href="/index.html"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="projects.html">Projects</a>
+              <a class="nav-link" href="/projects/index.html">Projects</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -154,9 +154,9 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="dotfiles.html">dotfiles</a>
+                  <a class="dropdown-item" href="/githubRepos/dotfiles/dotfiles.html">dotfiles</a>
                 </li>
-                <li><a class="dropdown-item" href="#">Repo2</a></li>
+                <li><a class="dropdown-item" href="/githubRepos/HackTheBox/hackthebox.html">HackTheBox</a></li>
                 <li><a class="dropdown-item" href="#">Repo3</a></li>
               </ul>
             </li>
@@ -224,7 +224,7 @@
           <!-- justify-content-center, centers them based on flex direction -->
           <div class="d-flex flex-column p-2 w-50 justify-content-center">
             <div class="text-center">
-              <img src="static/apollo.png" style="width: 200px" />
+              <img src="/projects/FYP/static/img/apollo.png" style="width: 200px" />
             </div>
             <div class="fs-5 fw-bold timesNewRoman text-center">
               Baidu Apollo (ADS)
@@ -241,7 +241,7 @@
             blocks for ADS functions.
 
             <div class="text-center m-3">
-              <img src="static/Apollo_8_0.png" style="width: 700px" />
+              <img src="/projects/FYP/static/img/Apollo_8_0.png" style="width: 700px" />
               <figcaption class="fs-5 fst-italic timesNewRoman">
                 Apollo ADS architecture
               </figcaption>
@@ -255,7 +255,7 @@
           <!-- CarMaker Logo and Name -->
           <div class="d-flex flex-column p-2 w-50 justify-content-center">
             <div class="text-center">
-              <img src="static/carmaker.svg" style="width: 200px" />
+              <img src="/projects/FYP/static/img/carmaker.svg" style="width: 200px" />
             </div>
             <div class="fs-5 fw-bold timesNewRoman text-center">
               IPG CarMaker (Simulator)
@@ -275,7 +275,7 @@
 
             <div class="text-center m-3">
               <img
-                src="static/carmakerScenarioEditor.png"
+                src="/projects/FYP/static/img/carmakerScenarioEditor.png"
                 style="width: 700px"
               />
               <figcaption class="fs-5 fst-italic timesNewRoman">
@@ -305,7 +305,7 @@
                 <div class="col p-4">
                   <div class="fs-5 timesNewRoman">
                     <div class="d-flex" style="justify-content: center">
-                      <img src="static/docker.png" style="width: 150px" />
+                      <img src="/projects/FYP/static/img/docker.png" style="width: 150px" />
                     </div>
                     <ul style="position: absolute; top: 200px">
                       <li>Docker Installation</li>
@@ -325,7 +325,7 @@
                   <div class="fs-5 timesNewRoman">
                     <div class="d-flex" style="justify-content: center">
                       <img
-                        src="static/nvidia.svg"
+                        src="/projects/FYP/static/img/nvidia.svg"
                         style="margin: 25px; width: 150px"
                       />
                     </div>
@@ -347,7 +347,7 @@
                   <div class="fs-5 timesNewRoman">
                     <div class="d-flex" style="justify-content: center">
                       <img
-                        src="static/apollo.png"
+                        src="/projects/FYP/static/img/apollo.png"
                         style="margin: 25px; width: 150px; margin-top: 50px"
                       />
                     </div>
@@ -395,21 +395,21 @@
                           >
                             <div class="d-flex align-items-center">
                               <img
-                                src="static/ASAM.svg"
+                                src="/projects/FYP/static/img/ASAM.svg"
                                 style="height: 35px; margin-right: 10px"
                               />
                               <h2 class="m-0">OpenDRIVE</h2>
                             </div>
                             <div class="d-flex align-items-center">
                               <img
-                                src="static/MathWorks.svg"
+                                src="/projects/FYP/static/img/MathWorks.svg"
                                 style="height: 35px; margin-right: 10px"
                               />
                               <h2 class="m-0">RoadRunner</h2>
                             </div>
                             <div class="d-flex align-items-center">
                               <img
-                                src="static/apollo.png"
+                                src="/projects/FYP/static/img/apollo.png"
                                 style="height: 35px; margin-right: 10px"
                               />
                               <h2 class="m-0">HD Map (binary)</h2>
@@ -423,11 +423,11 @@
               </div>
               <div class="col-md-6">
                 <div class="column d-flex flex-column">
-                  <img src="static/OpenDRIVENottingham.png" />
+                  <img src="/projects/FYP/static/img/OpenDRIVENottingham.png" />
                   <figcaption class="fs-5 fst-italic timesNewRoman text-center">
                     OpenDRIVE format map
                   </figcaption>
-                  <img src="static/RoadrunnerNottingham.png" />
+                  <img src="/projects/FYP/static/img/RoadrunnerNottingham.png" />
                   <figcaption class="fs-5 fst-italic timesNewRoman text-center">
                     RoadRunner format map
                   </figcaption>
@@ -437,7 +437,7 @@
               <div class="row">
                 <div class="col-md-3">
                   <img
-                    src="static/WorldFramePositionApollo.png"
+                    src="/projects/FYP/static/img/WorldFramePositionApollo.png"
                     style="width: 100%; height: 380px"
                   />
                   <figcaption class="fs-5 fst-italic timesNewRoman text-center">
@@ -446,7 +446,7 @@
                 </div>
                 <div class="col-md-3">
                   <img
-                    src="static/WorldFramePositionIPG.png"
+                    src="/projects/FYP/static/img/WorldFramePositionIPG.png"
                     style="width: 100%; height: 380px"
                   />
                   <figcaption class="fs-5 fst-italic timesNewRoman text-center">
@@ -497,7 +497,7 @@
 
               <div class="col-md-6">
                 <div class="column d-flex flex-column">
-                  <img src="static/ScenarioForAVTesting.png" />
+                  <img src="/projects/FYP/static/img/ScenarioForAVTesting.png" />
                   <figcaption class="fs-5 fst-italic timesNewRoman text-center">
                     Scenario for AV testing
                   </figcaption>
@@ -507,11 +507,11 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="column d-flex flex-column">
-                  <img src="static/BaiduApollo'sDefinedSensorPlacement.png" />
+                  <img src="/projects/FYP/static/img/BaiduApollo'sDefinedSensorPlacement.png" />
                   <figcaption class="fs-5 fst-italic timesNewRoman text-center">
                     Baidu Apollo's defined sensor placement
                   </figcaption>
-                  <img src="static/SensorMountingInIPGCarMaker.png" />
+                  <img src="/projects/FYP/static/img/SensorMountingInIPGCarMaker.png" />
                   <figcaption class="fs-5 fst-italic timesNewRoman text-center">
                     Sensor Mounting in IPG CarMaker
                   </figcaption>
@@ -579,7 +579,7 @@
           <div class="m-5">
             <div class="mb-3 text-center">
               <img
-                src="static/IntegrationBetweenIPGCarMakerandBaiduApollo.png"
+                src="/projects/FYP/static/img/IntegrationBetweenIPGCarMakerandBaiduApollo.png"
               />
               <figcaption class="fs-5 fst-italic timesNewRoman text-center">
                 Integration between Baidu Apollo and IPG CarMaker
@@ -652,7 +652,7 @@ def recvBinMsg(self,sock):
                     writing to / from channels.
                   </p>
                   <div class="text-center">
-                    <img src="static/CyberRTNode.png" />
+                    <img src="/projects/FYP/static/img/CyberRTNode.png" />
                     <figcaption
                       class="fs-5 fst-italic timesNewRoman text-center"
                     >
@@ -925,7 +925,7 @@ throttle, brake, steeringTarget, steeringRate = client_Control_subscriber.recvSi
         <div class="text-center m-5">
           <video
             height="600"
-            src="static/FYP_results.mp4"
+            src="/projects/FYP/static/img/FYP_results.mp4"
             autoplay
             loop
             muted
@@ -945,7 +945,7 @@ throttle, brake, steeringTarget, steeringRate = client_Control_subscriber.recvSi
               <div class="col p-4">
                 <div class="fs-5 timesNewRoman">
                   <div class="d-flex" style="justify-content: center">
-                    <img src="static/bazel.svg" style="width: 200px" />
+                    <img src="/projects/FYP/static/img/bazel.svg" style="width: 200px" />
                   </div>
                   <p class="m-5 justify"  style="position: absolute; top: 100px">
                     An open-source build and test tool developed by Google.
@@ -965,7 +965,7 @@ throttle, brake, steeringTarget, steeringRate = client_Control_subscriber.recvSi
               <div class="col p-4">
                 <div class="fs-5 timesNewRoman">
                   <div class="d-flex" style="justify-content: center">
-                    <img src="static/GoogleProtobuf.png" style="width: 200px" />
+                    <img src="/projects/FYP/static/img/GoogleProtobuf.png" style="width: 200px" />
                   </div>
                   <p class="m-5 justify" style="position: absolute; top: 100px"">
                     An open-source data format for serializing structured data.
@@ -979,6 +979,6 @@ throttle, brake, steeringTarget, steeringRate = client_Control_subscriber.recvSi
         </div>
       </div>
     </div>
-    <script src="prism.js"></script>
+    <script src="/projects/static/js/prism.js"></script>
   </body>
 </html>

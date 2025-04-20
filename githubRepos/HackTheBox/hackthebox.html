@@ -1,0 +1,327 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- Roboto Slab font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <!-- model-viewer -->
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+    ></script>
+    <!-- CSS -->
+    <link href="/static/css/styles.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/static/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/static/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/static/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/static/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/static/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/static/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/static/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/static/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/static/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/static/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/static/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/static/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/static/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/static/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- favicon end -->
+
+    <!-- Support Mobile screen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>My Webpage</title>
+
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Gets sidebar element
+        const sidebar = document.getElementById("sidebar");
+        // Gets navbar element
+        const navbar = document.getElementById("navbar");
+        // Gets the initial top position of the sidebar
+        const sidebarTop = sidebar.offsetTop;
+
+        window.addEventListener("scroll", function () {
+          // Gets the height of the navbar
+          const navbarHeight = navbar.offsetHeight;
+          // Gets the scrolling Y pixels
+          const scrollTop = window.scrollY;
+          // If scrolling more than navbarHeight, Fix the sidebar position
+          if (scrollTop >= navbarHeight) {
+            sidebar.style.position = "fixed";
+            sidebar.style.top = 0 + "px";
+            document.querySelector(
+              ".background-documentation",
+            ).style.marginLeft = "280px";
+          } else {
+            // If scrolling less than navbarHeight, use relative posiiton
+            sidebar.style.position = "relative";
+            sidebar.style.top = "auto";
+            document.querySelector(
+              ".background-documentation",
+            ).style.marginLeft = "0px";
+          }
+        });
+      });
+    </script>
+
+    <!-- Github Markdown CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown-dark.min.css"
+    />
+
+    <!-- Retro Markdown CSS -->
+    <!-- <link -->
+    <!--   rel="stylesheet" -->
+    <!--   href="https://cdn.jsdelivr.net/gh/markdowncss/retro@1.0.0/retro.css" -->
+    <!-- /> -->
+  </head>
+
+  <body>
+    <!--Navigation Pane Top-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" ID="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html">
+          <img
+            src="/static/img/logo.png"
+            alt="Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+          <span class="me-3">Herr Ken</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/projects/index.html">Projects</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link active dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Github Repositories
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/githubRepos/dotfiles/dotfiles.html"
+                    >dotfiles</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/githubRepos/HackTheBox/hackthebox.html"
+                    >HackTheBox</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Repo3</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!--Navigation Pane End-->
+
+    <div class="d-flex flex-nowrap" style="height: 2000px">
+      <!-- Collapsible Sidebar -->
+      <div
+        class="flex-shrink-0 p-3 bg-white"
+        id="sidebar"
+        style="height: 100%; width: 280px"
+      >
+        <a
+          href="/githubRepos/HackTheBox/hackthebox.html"
+          class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
+        >
+          <svg class="bi pe-none me-2" width="30" height="24">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+          <span class="fs-5 fw-semibold">HackTheBox</span>
+        </a>
+        <ul class="list-unstyled ps-0">
+          <!-- TODO: Add Quick Jumps -->
+          <li class="mb-1">
+            <!-- data-bs-target ID must match with <div class="collapse" id -->
+            <button
+              class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#suckless-collapse"
+              aria-expanded="false"
+            >
+              Coming Soon
+            </button>
+            <div class="collapse" id="suckless-collapse" style="">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li>
+                  <a
+                    href=""
+                    class="p-2 link-dark d-inline-flex text-decoration-none rounded btn-toggle-nav-items"
+                    >Coming Soon</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- Collapsible Sidebar End -->
+      <div class="background-documentation markdown-body">
+        <div class="m-5" id="readme"></div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+      <script>
+        // Add the name of the heading as id
+        const renderer = {
+          heading({ tokens, depth }) {
+            const text = this.parser.parseInline(tokens);
+            // Match for those with <a> </a> tags
+            const match = text.match(/>([^<]+)<\/a>/);
+            let escapedText = "";
+            if (match != null) {
+              escapedText = match[1].toLowerCase().replace(/[^a-zA-Z]+/g, "");
+              // match[0] : >suckless</a>   First match
+              // match[1]: suckless  Second Match
+            } else {
+              escapedText = text.toLowerCase().replace(/[^a-zA-Z]+/g, "");
+            }
+
+            return `
+            <h${depth} id="${escapedText}">
+              ${text}
+            </h${depth}>`;
+          },
+        };
+
+        marked.use({ renderer });
+
+        fetch(
+          "https://raw.githubusercontent.com/hkyee/HackTheBox/main/README.md",
+        )
+          .then((res) => res.text())
+          .then((md) => {
+            document.getElementById("readme").innerHTML = marked.parse(md);
+          });
+      </script>
+    </div>
+  </body>
+</html>

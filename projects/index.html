@@ -21,78 +21,78 @@
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
     ></script>
     <!-- CSS -->
-    <link href="styles.css" rel="stylesheet" />
+    <link href="/static/css/styles.css" rel="stylesheet" />
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
       sizes="57x57"
-      href="static/favicon/apple-icon-57x57.png"
+      href="/static/favicon/apple-icon-57x57.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="60x60"
-      href="static/favicon/apple-icon-60x60.png"
+      href="/static/favicon/apple-icon-60x60.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="72x72"
-      href="static/favicon/apple-icon-72x72.png"
+      href="/static/favicon/apple-icon-72x72.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="76x76"
-      href="static/favicon/apple-icon-76x76.png"
+      href="/static/favicon/apple-icon-76x76.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="114x114"
-      href="static/favicon/apple-icon-114x114.png"
+      href="/static/favicon/apple-icon-114x114.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="120x120"
-      href="static/favicon/apple-icon-120x120.png"
+      href="/static/favicon/apple-icon-120x120.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="144x144"
-      href="static/favicon/apple-icon-144x144.png"
+      href="/static/favicon/apple-icon-144x144.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="152x152"
-      href="static/favicon/apple-icon-152x152.png"
+      href="/static/favicon/apple-icon-152x152.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="static/favicon/apple-icon-180x180.png"
+      href="/static/favicon/apple-icon-180x180.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="static/favicon/android-icon-192x192.png"
+      href="/static/favicon/android-icon-192x192.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="static/favicon/favicon-32x32.png"
+      href="/static/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="96x96"
-      href="static/favicon/favicon-96x96.png"
+      href="/static/favicon/favicon-96x96.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="static/favicon/favicon-16x16.png"
+      href="/static/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="static/favicon/manifest.json" />
+    <link rel="manifest" href="/static/favicon/manifest.json" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
@@ -108,9 +108,9 @@
     <!--Navigation Pane Top-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/index.html">
           <img
-            src="static/logo.png"
+            src="/static/img/logo.png"
             alt="Logo"
             width="30"
             height="30"
@@ -132,12 +132,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
+              <a class="nav-link" aria-current="page" href="/index.html"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="projects.html">Projects</a>
+              <a class="nav-link active" href="/projects/index.html"
+                >Projects</a
+              >
             </li>
             <li class="nav-item dropdown">
               <a
@@ -151,9 +153,19 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="dotfiles.html">dotfiles</a>
+                  <a
+                    class="dropdown-item"
+                    href="/githubRepos/dotfiles/dotfiles.html"
+                    >dotfiles</a
+                  >
                 </li>
-                <li><a class="dropdown-item" href="#">Repo2</a></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/githubRepos/HackTheBox/hackthebox.html"
+                    >HackTheBox</a
+                  >
+                </li>
                 <li><a class="dropdown-item" href="#">Repo3</a></li>
               </ul>
             </li>
@@ -295,137 +307,134 @@
     <!-- Header Carousel Banner End -->
 
     <!-- Projects  -->
-    <div class="row m-5">
-      <div class="gap-4 d-flex align-items-stretch">
-        <!-- FYP -->
-        <div class="col-md-6 d-flex">
-          <div
-            class="g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative"
-            style="height: 100%"
-          >
-            <div class="col p-4 d-flex flex-column position-static">
-              <h3>
-                Behavior-in-the-loop testing of Automated Driving System (ADS)
-                for virtual safety testing
-              </h3>
-              <div class="my-2">
-                <span class="badge rounded-pill text-bg-primary">Linux</span>
-                <span class="badge rounded-pill text-bg-primary"
-                  >IPG CarMaker</span
-                >
-                <span class="badge rounded-pill text-bg-primary"
-                  >Baidu Apollo</span
-                >
-                <span class="badge rounded-pill text-bg-primary">Python</span>
-                <span class="badge rounded-pill text-bg-primary">Docker</span>
-              </div>
-              <hr />
-              <p class="card-text mb-auto">Final Year Project:</p>
-              <ul>
-                <li>
-                  Investigated the capability of Baidu Apollo, an existing
-                  open-source platform for Autonomous Driving System (ADS)
-                  model.
-                </li>
-                <li>
-                  Deep analysis on Baidu Apollo’s modules including
-                  <span class="fw-bold"
-                    >Perception, Prediction, Planning, Localization
-                  </span>
-                  and <span class="fw-bold"> Control</span>.
-                </li>
-                <li>
-                  Integrated the ADS model with IPG CarMaker, a virtual
-                  simulation tool for scenario-based testing, using IPG CarMaker
-                  Python API.
-                </li>
-                <li>
-                  Implemented client-server model using TCP/IP for establishing
-                  communication between IPG CarMaker and Baidu Apollo.
-                </li>
-                <li>
-                  Utilized Cyber RT framework, which follows the concept of
-                  Robotic Operating Systems (ROS).
-                </li>
-              </ul>
-              <!-- Makes the entire parent clickable to link -->
-              <a href="FYP.html" class="stretched-link"></a>
+    <div class="row m-5 d-flex align-items-stretch">
+      <!-- <div class="gap-4 d-flex"> -->
+      <!-- FYP -->
+      <div class="col-md-6">
+        <div
+          class="border rounded overflow-hidden shadow-sm position-relative d-flex flex-column"
+          style="height: 100%"
+        >
+          <div class="col p-4 d-flex flex-column">
+            <h3>
+              Behavior-in-the-loop testing of Automated Driving System (ADS) for
+              virtual safety testing
+            </h3>
+            <div class="my-2">
+              <span class="badge rounded-pill text-bg-primary">Linux</span>
+              <span class="badge rounded-pill text-bg-primary"
+                >IPG CarMaker</span
+              >
+              <span class="badge rounded-pill text-bg-primary"
+                >Baidu Apollo</span
+              >
+              <span class="badge rounded-pill text-bg-primary">Python</span>
+              <span class="badge rounded-pill text-bg-primary">Docker</span>
             </div>
-            <div>
-              <div>
-                <!-- img-fluid Fits image into container -->
-                <img
-                  src="static/BaiduApolloWithCarMaker.png"
-                  class="img-fluid"
-                  style="width: 100%; height: 100%"
-                />
-              </div>
-            </div>
+            <hr />
+            <p class="card-text mb-auto">Final Year Project:</p>
+            <ul>
+              <li>
+                Investigated the capability of Baidu Apollo, an existing
+                open-source platform for Autonomous Driving System (ADS) model.
+              </li>
+              <li>
+                Deep analysis on Baidu Apollo’s modules including
+                <span class="fw-bold"
+                  >Perception, Prediction, Planning, Localization
+                </span>
+                and <span class="fw-bold"> Control</span>.
+              </li>
+              <li>
+                Integrated the ADS model with IPG CarMaker, a virtual simulation
+                tool for scenario-based testing, using IPG CarMaker Python API.
+              </li>
+              <li>
+                Implemented client-server model using TCP/IP for establishing
+                communication between IPG CarMaker and Baidu Apollo.
+              </li>
+              <li>
+                Utilized Cyber RT framework, which follows the concept of
+                Robotic Operating Systems (ROS).
+              </li>
+            </ul>
+            <!-- Makes the entire parent clickable to link -->
+            <a href="/projects/FYP/FYP.html" class="stretched-link"></a>
+          </div>
+          <div class="mt-auto">
+            <!-- img-fluid Fits image into container -->
+            <img
+              src="/projects/static/img/BaiduApolloWithCarMaker.png"
+              class="img-fluid"
+              style="width: 100%; height: 100%"
+            />
           </div>
         </div>
-
-        <!-- FYP End -->
-
-        <!-- HDL Project Start -->
-        <div class="col-md-6 d-flex">
-          <div
-            class="g-0 border rounded overflow-hidden shadow-sm h-md-250 position-relative d-flex flex-md-column"
-          >
-            <div class="col p-4 d-flex flex-column position-static">
-              <h3>Temperature Measurement System with Built-in Memory</h3>
-              <div class="my-2">
-                <span class="badge rounded-pill text-bg-primary">VHDL</span>
-                <span class="badge rounded-pill text-bg-primary"
-                  >Field-Programmable Gate Arrays (FPGA)</span
-                >
-                <span class="badge rounded-pill text-bg-primary"
-                  >Xilinx ISE</span
-                >
-              </div>
-              <hr />
-              <p class="card-text mt-auto">Project:</p>
-              <ul>
-                <li>
-                  Designed a real-time temperature measurement system with
-                  Spartan-3E (Xilinx XC3S500E FPGA)
-                </li>
-                <li>
-                  Features include:
-                  <ul>
-                    <li>
-                      <span class="fw-bold">SPI</span> for data communication
-                      with an external temperature sensor
-                    </li>
-                    <li>
-                      Able to display temperature on the six digit 7-segment
-                      display and LCD screen.
-                    </li>
-                    <li>
-                      <span class="fw-bold">Dual Port RAM</span> integration to
-                      store the last measured temperature value.
-                    </li>
-                    <li>
-                      <span class="fw-bold">RS232</span> as serial communication
-                      for displaying temperatures on a desktop terminal.
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-              <!-- Makes the entire parent clickable to link -->
-              <a href="HDL.html" class="stretched-link"></a>
-            </div>
-            <div>
-              <!-- img-fluid Fits image into container -->
-              <img
-                src="static/TemperatureMeasurementSys.jpeg"
-                class="img-fluid"
-                style="width: 100%; height: 640px"
-              />
-            </div>
-          </div>
-        </div>
-        <!-- HDL Project End -->
       </div>
+
+      <!-- FYP End -->
+
+      <!-- HDL Project Start -->
+      <div class="col-md-6">
+        <div
+          class="border rounded overflow-hidden shadow-sm position-relative d-flex flex-column"
+          style="height: 100%"
+        >
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3>Temperature Measurement System with Built-in Memory</h3>
+            <div class="my-2">
+              <span class="badge rounded-pill text-bg-primary">VHDL</span>
+              <span class="badge rounded-pill text-bg-primary"
+                >Field-Programmable Gate Arrays (FPGA)</span
+              >
+              <span class="badge rounded-pill text-bg-primary">Xilinx ISE</span>
+            </div>
+            <hr />
+            <p class="card-text">Project:</p>
+            <ul>
+              <li>
+                Designed a real-time temperature measurement system with
+                Spartan-3E (Xilinx XC3S500E FPGA)
+              </li>
+              <li>
+                Features include:
+                <ul>
+                  <li>
+                    <span class="fw-bold">SPI</span> for data communication with
+                    an external temperature sensor
+                  </li>
+                  <li>
+                    Able to display temperature on the six digit 7-segment
+                    display and LCD screen.
+                  </li>
+                  <li>
+                    <span class="fw-bold">Dual Port RAM</span> integration to
+                    store the last measured temperature value.
+                  </li>
+                  <li>
+                    <span class="fw-bold">RS232</span> as serial communication
+                    for displaying temperatures on a desktop terminal.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <!-- Makes the entire parent clickable to link -->
+            <a href="/projects/HDL/HDL.html" class="stretched-link"></a>
+          </div>
+          <div class="mt-auto">
+            <!-- img-fluid Fits image into container -->
+            <!-- Must in in 1920 x 1054 -->
+
+            <img
+              src="/projects/static/img/TemperatureMeasurementSys.jpeg"
+              class="img-fluid"
+              style="width: 100%; height: 100%"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- HDL Project End -->
+      <!-- </div> -->
     </div>
     <!-- Projects End -->
   </body>
