@@ -265,19 +265,116 @@
             <button
               class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
               data-bs-toggle="collapse"
-              data-bs-target="#suckless-collapse"
+              data-bs-target="#startingpoint-collapse"
               aria-expanded="false"
             >
-              Coming Soon
+              Starting Point
             </button>
-            <div class="collapse" id="suckless-collapse" style="">
+            <div class="collapse" id="startingpoint-collapse" style="">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li>
-                  <a
-                    href=""
-                    class="p-2 link-dark d-inline-flex text-decoration-none rounded btn-toggle-nav-items"
-                    >Coming Soon</a
+                  <button
+                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#tier0-collapse"
+                    aria-expanded="false"
                   >
+                    Tier0
+                  </button>
+                  <div class="collapse" id="tier0-collapse" style="">
+                    <ul
+                      class="btn-toggle-nav list-unstyled fw-normal pb-1 small"
+                    >
+                      <li>
+                        <a
+                          href=""
+                          class="p-2 link-dark d-inline-flex text-decoration-none rounded btn-toggle-nav-items"
+                          data-md="startingPoint/Tier0/Dancing/README.md"
+                          >Dancing</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href=""
+                          class="p-2 link-dark d-inline-flex text-decoration-none rounded btn-toggle-nav-items"
+                          data-md="startingPoint/Tier0/Fawn/README.md"
+                          >Fawn</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href=""
+                          class="p-2 link-dark d-inline-flex text-decoration-none rounded btn-toggle-nav-items"
+                          data-md="startingPoint/Tier0/Meow/README.md"
+                          >Meow</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href=""
+                          class="p-2 link-dark d-inline-flex text-decoration-none rounded btn-toggle-nav-items"
+                          data-md="startingPoint/Tier0/Redeemer/README.md"
+                          >Redeemer</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <button
+                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#tier1-collapse"
+                    aria-expanded="false"
+                  >
+                    Tier1
+                  </button>
+                  <div class="collapse" id="tier1-collapse" style="">
+                    <ul
+                      class="btn-toggle-nav list-unstyled fw-normal pb-1 small"
+                    >
+                      <li>
+                        <a
+                          href=""
+                          class="p-2 link-dark d-inline-flex text-decoration-none rounded btn-toggle-nav-items"
+                          data-md="startingPoint/Tier1/Appointment/README.md"
+                          >Appointment</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href=""
+                          class="p-2 link-dark d-inline-flex text-decoration-none rounded btn-toggle-nav-items"
+                          data-md="startingPoint/Tier1/Crocodile/README.md"
+                          >Crocodile</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href=""
+                          class="p-2 link-dark d-inline-flex text-decoration-none rounded btn-toggle-nav-items"
+                          data-md="startingPoint/Tier1/Responder/README.md"
+                          >Responder</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href=""
+                          class="p-2 link-dark d-inline-flex text-decoration-none rounded btn-toggle-nav-items"
+                          data-md="startingPoint/Tier1/Sequel/README.md"
+                          >Sequel</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href=""
+                          class="p-2 link-dark d-inline-flex text-decoration-none rounded btn-toggle-nav-items"
+                          data-md="startingPoint/Tier1/Three/README.md"
+                          >Three</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -290,37 +387,27 @@
       </div>
       <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
       <script>
-        // Add the name of the heading as id
-        const renderer = {
-          heading({ tokens, depth }) {
-            const text = this.parser.parseInline(tokens);
-            // Match for those with <a> </a> tags
-            const match = text.match(/>([^<]+)<\/a>/);
-            let escapedText = "";
-            if (match != null) {
-              escapedText = match[1].toLowerCase().replace(/[^a-zA-Z]+/g, "");
-              // match[0] : >suckless</a>   First match
-              // match[1]: suckless  Second Match
-            } else {
-              escapedText = text.toLowerCase().replace(/[^a-zA-Z]+/g, "");
+        function loadMarkdown(filePath) {
+          const baseURL =
+            "https://raw.githubusercontent.com/hkyee/HackTheBox/main/";
+          fetch(baseURL + filePath)
+            .then((res) => res.text())
+            .then((md) => {
+              document.getElementById("readme").innerHTML = marked.parse(md);
+            });
+        }
+
+        document.querySelectorAll("[data-md]").forEach((item) => {
+          item.addEventListener("click", (e) => {
+            // Needs this line to work (Prevents default anchor behavior by ignoring href)
+            e.preventDefault();
+            const mdfile = e.currentTarget.getAttribute("data-md");
+            if (mdfile) {
+              loadMarkdown(mdfile);
             }
-
-            return `
-            <h${depth} id="${escapedText}">
-              ${text}
-            </h${depth}>`;
-          },
-        };
-
-        marked.use({ renderer });
-
-        fetch(
-          "https://raw.githubusercontent.com/hkyee/HackTheBox/main/README.md",
-        )
-          .then((res) => res.text())
-          .then((md) => {
-            document.getElementById("readme").innerHTML = marked.parse(md);
           });
+        });
+        loadMarkdown("README.md");
       </script>
     </div>
   </body>
