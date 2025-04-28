@@ -1,0 +1,528 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <!-- model-viewer -->
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+    ></script>
+    <!-- CSS -->
+    <link href="/static/css/styles.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/static/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/static/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/static/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/static/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/static/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/static/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/static/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/static/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/static/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/static/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/static/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/static/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/static/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/static/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- favicon end -->
+
+    <!-- Support Mobile screen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Syntax highlighting with prism.js -->
+    <link href="/projects/static/css/prism.css" rel="stylesheet" />
+
+    <title>My Webpage</title>
+  </head>
+
+  <body>
+    <!--Navigation Pane Top-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html">
+          <img
+            src="/static/img/logo.png"
+            alt="Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+          <span class="me-3">Herr Ken</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/projects/index.html">Projects</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Github Repositories
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/githubRepos/dotfiles/dotfiles.html"
+                    >dotfiles</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/githubRepos/HackTheBox/hackthebox.html"
+                    >HackTheBox</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Repo3</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!--Navigation Pane End-->
+
+    <div>
+      <div class="gray-box project_title">
+        <h1 class="text-center fw-bold">
+          Smart Voltage Fluctuation Monitoring and Protection System
+        </h1>
+      </div>
+
+      <div class="m-5">
+        <!-- Project Objective -->
+        <div class="fs-4">Objective</div>
+        <hr />
+        <p class="mb-5 fs-5 justify timesNewRoman">
+          To design and build a device that monitors voltage fluctuations and
+          execute protection measures when abnormal voltage levels are detected.
+          The device must also incorporate smart features such as remote
+          monitoring and control, real-time monitoring and automatic safety
+          tripping.
+        </p>
+        <!-- Project Description Start -->
+        <div class="fs-4">Description</div>
+        <hr />
+        <p class="mb-5 fs-5 justify timesNewRoman">
+          There is a need for a smarter and more reliable voltage monitoring
+          system that can provide real-time monitoring and alerts owners or
+          users to prevent equipment damage from voltage fluctuations. This
+          project aims to protect the load circuit by keeping the voltages
+          within operating range, while incorporating IoT features for
+          convenience.
+        </p>
+        <!-- Project Introduction Start -->
+        <div class="fs-4">Introduction</div>
+        <hr />
+        <div class="m-5">
+          <div class="text-center">
+            <img src="/projects/smartvolt/static/img/OVUV.png" alt="" />
+          </div>
+          <div class="mx-5">
+            <div class="fw-bold text-decoration-underline fs-5 timesNewRoman">
+              Overvoltage
+            </div>
+            <p class="mb-5 fs-5 justify timesNewRoman">
+              A common cause of overvoltage is the activation of capacitor
+              banks, which can lead to a transient increase in voltage levels.
+              These fluctuations can be particularly problematic in sensitive
+              equipment or systems that are not equipped with proper voltage
+              regulation or protection measures.
+            </p>
+            <div class="fw-bold text-decoration-underline fs-5 timesNewRoman">
+              Undervoltage
+            </div>
+            <p class="mb-5 fs-5 justify timesNewRoman">
+              Under voltage is a brief drop in root mean square voltage that is
+              typically brought on by short circuits, starting big engines, and
+              equipment malfunctions. The primary reasons of under voltage
+              include faulty equipment, opening and shutting circuit breakers,
+              engine starting, transformer energizing or equipment failure.
+            </p>
+          </div>
+        </div>
+        <!-- Project Introduction End -->
+        <!-- Project Methodology Start -->
+
+        <div class="fs-4">Methodology</div>
+        <hr />
+        <div class="m-5">
+          <h3 class="timesNewRoman">Circuit Design</h3>
+          <div class="m-5">
+            <div class="text-center">
+              <img src="/projects/smartvolt/static/img/Circuit.png" alt="" />
+            </div>
+            <div
+              class="border rounded overflow-hidden shadow-sm position-relative"
+              style="height: 100%"
+            >
+              <div class="mt-3 text-center">
+                <h1 class="timesNewRoman">Protection Circuit</h1>
+              </div>
+              <p class="timesNewRoman fs-5 mx-5 mt-3">
+                Table below highlights the main functioning components of the
+                circuit.
+              </p>
+              <div class="mx-5">
+                <table class="table mb-5">
+                  <thead class="table-light">
+                    <tr>
+                      <th scope="col" class="col-4">Symbol</th>
+                      <th scope="col" class="col-4">Component</th>
+                      <th scope="col" class="col-8">Function</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="text-center">
+                          <img
+                            src="/projects/smartvolt/static/img/Transformer.png"
+                            alt=""
+                            style="width: 10%"
+                          />
+                        </div>
+                      </td>
+                      <td>Transformer</td>
+                      <td>To step down 220V AC to 12V AC.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="text-center">
+                          <img
+                            src="/projects/smartvolt/static/img/BridgeRect.png"
+                            alt=""
+                            style="width: 20%"
+                          />
+                        </div>
+                      </td>
+                      <td>Bridge Rectifier</td>
+                      <td>To convert AC to DC.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="text-center">
+                          <img
+                            src="/projects/smartvolt/static/img/Regu.png"
+                            alt=""
+                            style="width: 20%"
+                          />
+                        </div>
+                      </td>
+                      <td>Voltage Regulator</td>
+                      <td>To stablise the 12V DC voltage.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="text-center">
+                          <img
+                            src="/projects/smartvolt/static/img/voltageDiv.png"
+                            alt=""
+                            style="width: 10%"
+                          />
+                        </div>
+                      </td>
+                      <td>Voltage Divider</td>
+                      <td>
+                        To provide a comparison voltage against the Zener Diode
+                        Voltage for the comparator.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="text-center">
+                          <img
+                            src="/projects/smartvolt/static/img/zener.png"
+                            alt=""
+                            style="width: 10%"
+                          />
+                        </div>
+                      </td>
+                      <td>Zener Diode</td>
+                      <td>
+                        To provide a comparison voltage against the voltage
+                        divider for the comparator.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="text-center">
+                          <img
+                            src="/projects/smartvolt/static/img/compare.png"
+                            alt=""
+                            style="width: 15%"
+                          />
+                        </div>
+                      </td>
+                      <td>Comparator</td>
+                      <td>
+                        To compare two input voltages and output either HIGH or
+                        LOW signal.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="text-center">
+                          <img
+                            src="/projects/smartvolt/static/img/Trans.png"
+                            alt=""
+                            style="width: 20%"
+                          />
+                        </div>
+                      </td>
+                      <td>Transistor BJT</td>
+                      <td>
+                        Acts as an electronic switch for the relay to be
+                        grounded.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="text-center">
+                          <img
+                            src="/projects/smartvolt/static/img/relay.png"
+                            alt=""
+                            style="width: 15%"
+                          />
+                        </div>
+                      </td>
+                      <td>Relay</td>
+                      <td>
+                        To connect or disconnect the load from power supply.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="timesNewRoman fw-bold fs-3">Explanation</p>
+                <p class="timesNewRoman fs-5 mx-5">
+                  The components
+                  <span class="fw-bold">Transformer </span>,
+                  <span class="fw-bold">Bridge Rectifier </span> and
+                  <span class="fw-bold">Voltage Regulator </span>
+                  function to convert the socket supply to acceptable operating
+                  range of household appliances. The main protection function
+                  starts with a Voltage Divider to divide the input voltage. The
+                  divided voltage is then compared with the Zener diode voltage.
+                </p>
+                <div class="mx-5">
+                  <ul>
+                    <div class="text-center">
+                      <img
+                        src="/projects/smartvolt/static/img/compareOver.png"
+                        alt=""
+                        style="width: 15%"
+                      />
+                    </div>
+                    <li class="timesNewRoman fs-5">
+                      If the divided voltage is greater than Zener diode
+                      voltage, overvoltage has occured.
+                    </li>
+                    <div class="text-center">
+                      <img
+                        src="/projects/smartvolt/static/img/compareUnder.png"
+                        alt=""
+                        style="width: 19%"
+                      />
+                    </div>
+                    <li class="timesNewRoman fs-5">
+                      If the divided voltage is lesser than Zener diode voltage,
+                      undervoltage has occured.
+                    </li>
+                  </ul>
+                </div>
+                <p class="timesNewRoman fs-5 mx-5">
+                  If any one these conditions satisfy, the comparator will then
+                  output HIGH signal, which activates the transistor to be in
+                  Saturation region, completing the current flow of the
+                  connected relay. This magnetises the coil and therefore
+                  disconnects the load from the power supply.
+                </p>
+
+                <p
+                  class="m-5 fw-bold timesNewRoman fs-5 text-decoration-underline"
+                >
+                  Zener diode I-V graph
+                </p>
+                <div class="text-center m-3">
+                  <img
+                    src="/projects/smartvolt/static/img/Zener-diode-characteristics-curve.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="timesNewRoman">Circuit Simulation</h3>
+          <div class="m-5">
+            <div class="row">
+              <div class="col-md-8 mb-4">
+                <div
+                  class="border rounded overflow-hidden shadow-sm position-relative"
+                  style="height: 100%"
+                >
+                  <div class="text-center m-3">
+                    <img
+                      src="/projects/smartvolt/static/img/plecs.png"
+                      alt=""
+                      style="width: 100%"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div
+                  class="border rounded overflow-hidden shadow-sm position-relative"
+                  style="height: 100%"
+                >
+                  <div class="text-center m-3">
+                    <img
+                      src="/projects/smartvolt/static/img/resistance.png"
+                      alt=""
+                      style="width: 80%"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="timesNewRoman">PCB Design</h3>
+          <div class="m-5">
+            <div
+              class="mb-4 border rounded overflow-hidden shadow-sm position-relative"
+              style="height: 100%"
+            >
+              <div class="text-center m-3">
+                <img
+                  src="/projects/smartvolt/static/img/PCB.png"
+                  alt=""
+                  style="width: 80%"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div
+                  class="border rounded overflow-hidden shadow-sm position-relative"
+                  style="height: 100%"
+                >
+                  <div class="text-center m-3">
+                    <img
+                      src="/projects/smartvolt/static/img/PCB2.png"
+                      alt=""
+                      style="width: 80%"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

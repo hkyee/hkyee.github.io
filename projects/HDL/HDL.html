@@ -700,26 +700,237 @@ end process power_on_initialize;
                     </thead>
                     <tbody>
                       <tr>
+                        <td><var>dina</var></td>
+                        <td>In</td>
+                        <td>STD_LOGIC_VECTOR</td>
+                        <td>
+                          DataIn A pin. This holds the data to be stored in BCD
+                          form.
+                        </td>
+                      </tr>
+                      <tr>
                         <td><var>ena</var></td>
                         <td>In</td>
                         <td>STD_LOGIC</td>
                         <td>Enable A pin. Set to HIGH to write.</td>
                       </tr>
+                      <tr>
+                        <td><var>enb</var></td>
+                        <td>In</td>
+                        <td>STD_LOGIC</td>
+                        <td>Enable B pin. Set to HIGH to read.</td>
+                      </tr>
+                      <tr>
+                        <td><var>wea</var></td>
+                        <td>In</td>
+                        <td>STD_LOGIC</td>
+                        <td>WriteEnable A pin. Set to HIGH to enable write.</td>
+                      </tr>
+                      <tr>
+                        <td><var>addra</var></td>
+                        <td>In</td>
+                        <td>STD_LOGIC_VECTOR</td>
+                        <td>The memory address that data is written to.</td>
+                      </tr>
+                      <tr>
+                        <td><var>addrb</var></td>
+                        <td>In</td>
+                        <td>STD_LOGIC_VECTOR</td>
+                        <td>The memory address that data is read from.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <h5 class="mt-5 text-decoration-underline">Test bench code</h5>
+                <pre class="pre-scrollable rounded mb-5">
+                    <code class="language-vhdl">
+begin
+--Setting signal defaults
+tb_ena <= '0';
+tb_enb <= '0';
+tb_wea <= "1";
+--Setting the same address for write and read
+tb_addra <= "1";
+tb_addrb <= "1";
+
+--Write
+wait for 1 ms;
+--We test by writing all '1's to be stored.
+tb_dina <= (others => '1');
+tb_ena <= '1';
+wait for 1 ms;
+tb_ena <= '0';
+
+--Read
+wait for 1 ms;
+tb_enb <= '1';
+wait for 1 ms;
+tb_enb <= '0';
+
+                    </code>
+                </pre>
+                <div class="text-center">
+                  <img
+                    src="/projects/HDL/static/img/DPRAMTestBench.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- DPRAM End -->
+          <!-- RS232 Start -->
+          <div
+            class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="row m-5">
+              <div class="col-md-3 text-center">
+                <h1 class="timesNewRoman">RS232</h1>
+              </div>
+              <div class="col-md-9">
+                <p class="timesNewRoman fs-5 justify">
+                  The communication standard for RS232 accepts an input of 8-bit
+                  data vector, which is equivalent to a single ASCII character
+                  representation.
+                </p>
+                <div class="text-center">
+                  <img
+                    src="/projects/HDL/static/img/RS232_Data_format.png"
+                    alt=""
+                  />
+                </div>
+                <p class="timesNewRoman fs-5 justify">
+                  To display temperature values on the PuTTY terminal, six
+                  consecutive ASCII characters or 48 bits of data needs to be
+                  sent consecutively. Fortunately, the ASCII character
+                  representation of numeric values can be easily constructed by
+                  concatenating "0011" before the BCD value. Let's take a look
+                  at an example.
+                </p>
+                <div class="d-flex justify-content-center">
+                  <table
+                    class="table text-center table-bordered table-hover"
+                    style="width: 700px"
+                  >
+                    <thead>
+                      <tr class="table-light" style="font-size: 20px">
+                        <th scope="col">BCD</th>
+                        <th scope="col">Binary</th>
+                        <th scope="col">Character</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="fw-bold">0101</td>
+                        <td>0011<span class="fw-bold">0101</span></td>
+                        <td>5</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
 
-                <div class="text-center">
-                  <img src="static/" alt="" />
-                </div>
                 <pre class="pre-scrollable rounded mb-5">
                     <code class="language-vhdl">
+begin
+process (Clock1x)
+begin
+if rising_edge(Clock1x) then
+    if iBitNo = "1001" then
+        iBitNo <= "0000";
+        --Count the number of ASCII characters sent (packets)
+        if iPacketNo = "110" then
+            iPacketNo <= "000";
+        else
+            iPacketNo <= iPacketNo + '1';
+        end if;
+    else
+        iBitNo <= iBitNo + '1';
+    end if;
+end if;
+end process;
 
+with iPacketNo select
+             -- Digit 5
+iDataOut <= "0011" & BCD(23 downto 20) when "000",
+            -- Digit 4
+            "0011" & BCD(19 downto 16) when "001",
+            -- Digit 3
+            "0011" & BCD(15 downto 12) when "010",
+            -- Digit 2
+            "0011" & BCD(11 downto 8) when "011",
+            -- Digit 1
+            "0011" & BCD(7 downto 4) when "100",
+            -- Digit 0
+            "0011" & BCD(3 downto 0) when "101",
+            -- Space Character
+            "00100000" when "110",
+            "11111111" when others;
+--Sends 8 bits of data as Output
+TxdData <= iDataOut;
+end Behavioral;
                     </code>
                 </pre>
+                <p class="timesNewRoman fs-5 justify">
+                  RS232 sends data serially, one bit at a time. Due to this, a
+                  serialization process is constructed to convert the 8-bit
+                  vector <var>TxdData</var> into a serial of bits for data
+                  transmission.
+                </p>
+                <pre class="pre-scrollable rounded mb-5">
+                    <code class="language-vhdl">
+process(iClock1xEnable, iClock1x)
+begin
+if iClock1xEnable ='0' then
+    iNoBitsSend <= (others=>'0');
+    iTxdBuffer <= (others=>'0');
+    presState <= stIdle;
+elsif iClock1x'event and iClock1x ='1' then
+    --Count the number of bits sent
+    iNoBitsSend <= iNoBitsSend + '1';
+    presState <= nextState;
+    if iEnableTxdBuffer = '1' then
+        iTxdBuffer <= DataIn & '0';
+    else
+        iTxd <= iTxdBuffer(0);
+        --Shifting of bits
+        iTxdBuffer <= '1' & iTxdBuffer (8 downto 1);
+    end if;
+end if;
+end process;
+--Sends 1 bit of Data as Output
+Txd <= iTxd;
+                    </code>
+                </pre>
+                <p class="timesNewRoman fs-5 justify">
+                  The timing simulation waveform can be seen below for the
+                  serialization process. From the figure below, observe the last
+                  row for <var class="fw-bold">itxd</var> where we sent
+                  <var class="fw-bold">DataIn</var>
+                  (00111001) in reverse order from Least Significant Bit to Most
+                  Significant Bit.
+                </p>
+                <div class="text-center">
+                  <img
+                    src="/projects/HDL/static/img/RS232TxdTestBench.png"
+                    alt=""
+                  />
+                </div>
               </div>
             </div>
           </div>
+          <!-- RS232 End -->
+        </div>
+        <!-- Methodology End -->
+
+        <!-- Results -->
+        <div class="fs-4">Results</div>
+        <hr />
+        <div class="text-center">
+          <img
+            src="/projects/HDL/static/img/Results.jpg"
+            alt=""
+            style="height: 800px"
+          />
         </div>
       </div>
     </div>

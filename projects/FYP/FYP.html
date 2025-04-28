@@ -318,7 +318,7 @@
             <!-- First Card -->
             <div class="col-md-4">
               <div
-                class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                class="border rounded overflow-hidden shadow-sm position-relative"
                 style="height: 300px"
               >
                 <div class="col p-4">
@@ -340,7 +340,7 @@
             <!-- Second Card -->
             <div class="col-md-4">
               <div
-                class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                class="border rounded overflow-hidden shadow-sm position-relative"
                 style="height: 300px"
               >
                 <div class="col p-4">
@@ -362,7 +362,7 @@
             <!-- Third Card -->
             <div class="col-md-4">
               <div
-                class="g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                class="border rounded overflow-hidden shadow-sm position-relative"
                 style="height: 300px"
               >
                 <div class="col p-4">
@@ -395,62 +395,143 @@
                   </div>
 
                   <!-- Nodes and line start-->
-                  <div class="mt-5">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="d-flex flex-row justify-content-end">
-                          <div class="vertical-line">
-                            <div class="node-first"></div>
-                            <div class="node"></div>
-                            <div class="node-last"></div>
+                  <div class="mt-5 mx-3 mb-3" style="height: 100%">
+                    <!-- <div class="row"> -->
+                    <!--   <div class="col-md-5"> -->
+                    <!--     <div class="d-flex flex-row justify-content-end"> -->
+                    <!--       <div class="vertical-line"> -->
+                    <!--         <div class="node-first"></div> -->
+                    <!--         <div class="node"></div> -->
+                    <!--         <div class="node-last"></div> -->
+                    <!--       </div> -->
+                    <!--     </div> -->
+                    <!--   </div> -->
+                    <!--   <div class="col-md-7"> -->
+                    <!--     <div class="d-flex flex-row justify-content-start"> -->
+                    <!--       <div -->
+                    <!--         class="d-flex flex-column" -->
+                    <!--         style=" -->
+                    <!--           height: 340px; -->
+                    <!--           justify-content: space-between; -->
+                    <!--         " -->
+                    <!--       > -->
+                    <!--         <div class="d-flex align-items-center"> -->
+                    <!--           <img -->
+                    <!--             src="/projects/FYP/static/img/ASAM.svg" -->
+                    <!--             style="height: 35px; margin-right: 10px" -->
+                    <!--           /> -->
+                    <!--           <h2 class="m-0 timesNewRoman">OpenDRIVE</h2> -->
+                    <!--         </div> -->
+                    <!--         <div class="d-flex align-items-center"> -->
+                    <!--           <img -->
+                    <!--             src="/projects/FYP/static/img/MathWorks.svg" -->
+                    <!--             style="height: 35px; margin-right: 10px" -->
+                    <!--           /> -->
+                    <!--           <h2 class="m-0 timesNewRoman">RoadRunner</h2> -->
+                    <!--         </div> -->
+                    <!--         <div class="d-flex align-items-center"> -->
+                    <!--           <img -->
+                    <!--             src="/projects/FYP/static/img/apollo.png" -->
+                    <!--             style="height: 35px; margin-right: 10px" -->
+                    <!--           /> -->
+                    <!--           <h2 class="m-0 timesNewRoman">HD Map (binary)</h2> -->
+                    <!--         </div> -->
+                    <!--       </div> -->
+                    <!--     </div> -->
+                    <!--   </div> -->
+                    <!-- </div> -->
+                    <div class="main-timeline animate">
+                      <div class="node-container left animate">
+                        <div class="text-center">
+                          <img
+                            src="/projects/FYP/static/img/ASAM.svg"
+                            alt=""
+                            style="height: 35px"
+                          />
+                          <div class="fw-bold" style="color: #006ea5">
+                            ASAM OpenDRIVE®
                           </div>
+                          <p class="timesNewRoman justify mb-0 mx-3">
+                            A standardized file format used to describe road
+                            networks for driving simulation and autonomous
+                            vehicle development.
+                          </p>
                         </div>
                       </div>
-                      <div class="col-md-7">
-                        <div class="d-flex flex-row justify-content-start">
-                          <div
-                            class="d-flex flex-column"
-                            style="
-                              height: 340px;
-                              justify-content: space-between;
-                            "
-                          >
-                            <div class="d-flex align-items-center">
-                              <img
-                                src="/projects/FYP/static/img/ASAM.svg"
-                                style="height: 35px; margin-right: 10px"
-                              />
-                              <h2 class="m-0 timesNewRoman">OpenDRIVE</h2>
-                            </div>
-                            <div class="d-flex align-items-center">
-                              <img
-                                src="/projects/FYP/static/img/MathWorks.svg"
-                                style="height: 35px; margin-right: 10px"
-                              />
-                              <h2 class="m-0 timesNewRoman">RoadRunner</h2>
-                            </div>
-                            <div class="d-flex align-items-center">
-                              <img
-                                src="/projects/FYP/static/img/apollo.png"
-                                style="height: 35px; margin-right: 10px"
-                              />
-                              <h2 class="m-0 timesNewRoman">HD Map (binary)</h2>
-                            </div>
+                      <div class="node-container right animate">
+                        <div class="text-center">
+                          <img
+                            src="/projects/FYP/static/img/MathWorks.svg"
+                            alt=""
+                            style="height: 35px"
+                          />
+                          <div class="fw-bold" style="color: #000000">
+                            RoadRunner
                           </div>
+                          <p class="timesNewRoman justify mb-0 mx-3">
+                            A tool developed by MathWorks. The road file is
+                            converted to an interim RoadRunner format before
+                            export to Apollo.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="node-container left animate">
+                        <div class="text-center">
+                          <img
+                            src="/projects/FYP/static/img/apollo.png"
+                            alt=""
+                            style="height: 35px"
+                          />
+                          <div class="fw-bold" style="color: #000000">
+                            HD Map
+                          </div>
+                          <p class="timesNewRoman justify mb-0 mx-3">
+                            Apollo's defined map format in binary. The map is
+                            then used to generate routes for the vehicle.
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      // Use Intersection Observer to determine if objects are within the viewport
+                      const observer = new IntersectionObserver((entries) => {
+                        entries.forEach((entry) => {
+                          if (entry.isIntersecting) {
+                            // Adds in-view class when in view
+                            entry.target.classList.add("in-view");
+                            return;
+                          }
+                          entry.target.classList.remove("in-view");
+                        });
+                      });
+
+                      // Get all the elements with the .animate class applied
+                      const allAnimatedElements =
+                        document.querySelectorAll(".animate");
+
+                      // Add the observer to each of those elements
+                      allAnimatedElements.forEach((element) =>
+                        observer.observe(element),
+                      );
+                    });
+                  </script>
+                  <!-- Nodes and Lines End -->
                 </div>
               </div>
               <div class="col-md-6 mb-4 h-100">
                 <div class="column d-flex flex-column">
-                  <img src="/projects/FYP/static/img/OpenDRIVENottingham.png" />
+                  <img
+                    src="/projects/FYP/static/img/OpenDRIVENottingham.png"
+                    class="img-fluid"
+                  />
                   <div class="fs-5 fst-italic timesNewRoman text-center">
                     OpenDRIVE format map
                   </div>
                   <img
                     src="/projects/FYP/static/img/RoadrunnerNottingham.png"
+                    class="img-fluid"
                   />
                   <div class="fs-5 fst-italic timesNewRoman text-center">
                     RoadRunner format map
