@@ -454,11 +454,22 @@
                     alt=""
                   />
                 </div>
+                <p class="m-5 timesNewRoman justify fs-5">
+                  A zener diode functions in reverse bias mode. It is used to
+                  output a constant voltage for comparing with the voltage
+                  divider. The selected voltage for Zener Diode in Undervoltage
+                  and Overvoltage conditions are 5.6V and 6.6V respectively.
+                </p>
               </div>
             </div>
           </div>
           <h3 class="timesNewRoman">Circuit Simulation</h3>
           <div class="m-5">
+            <p class="timesNewRoman justify fs-5">
+              We simulated the circuit in PLECS. With standardized E24 resistor
+              values, we can calculate the right resistance needed for voltage
+              divider.
+            </p>
             <div class="row">
               <div class="col-md-8 mb-4">
                 <div
@@ -508,7 +519,7 @@
               <div class="col-md-6 mb-4">
                 <div
                   class="border rounded overflow-hidden shadow-sm position-relative"
-                  style="height: 100%"
+                  style="height: 100%; width: 100%"
                 >
                   <div class="text-center m-3">
                     <img
@@ -519,8 +530,37 @@
                   </div>
                 </div>
               </div>
+              <div class="col-md-6 mb-4">
+                <div
+                  class="border rounded overflow-hidden shadow-sm position-relative p-3"
+                  style="height: 100%"
+                >
+                  <div style="height: 100%; width: 100%">
+                    <div class="ModelViewer">
+                      <model-viewer
+                        src="/projects/smartvolt/static/img/onlyPCB.glb"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        camera-controls
+                        tone-mapping="neutral"
+                        poster="poster.webp"
+                        shadow-intensity="1"
+                      >
+                      </model-viewer>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          <h3 class="timesNewRoman">IoT Integration</h3>
+          <div class="m-5"></div>
+          <h3 class="timesNewRoman">Modelling</h3>
+          <div class="m-5"></div>
+          <h3 class="timesNewRoman">Fabrication</h3>
+          <div class="m-5"></div>
+          <h3 class="timesNewRoman">Results</h3>
+          <div class="m-5"></div>
         </div>
       </div>
     </div>
