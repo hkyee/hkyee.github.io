@@ -534,6 +534,8 @@ model-viewer {
     inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
     inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
   width: 100%;
+  /* This ensures the background is the same height as its content */
+  height: auto;
   /* margin-left: 280px; */
 }
 
