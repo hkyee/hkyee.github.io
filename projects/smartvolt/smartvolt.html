@@ -792,13 +792,448 @@ Blynk.virtualWrite(V3, powerUsage);
         <hr />
         <div class="m-5">
           <h3 class="timesNewRoman">Automatic Tripping and Reconnection</h3>
-          <div class="m-5"></div>
+          <div class="row m-5">
+            <!-- First Card -->
+            <div class="col-md-2">
+              <div
+                class="border rounded-lg overflow-hidden shadow-sm position-relative"
+                style="height: 300px; border-radius: 1rem"
+              >
+                <div class="col">
+                  <div class="fs-5 timesNewRoman">
+                    <div class="d-flex" style="justify-content: center">
+                      <img
+                        src="/projects/smartvolt/static/img/Normal.jpg"
+                        alt="Normal Condition"
+                        style="width: 100%; height: 180px; cursor: pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#normalModal"
+                      />
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="normalModal"
+                        tabindex="-1"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-dialog-centered modal-lg"
+                        >
+                          <div class="modal-content bg-transparent border-0">
+                            <div class="modal-body p-0 text-center">
+                              <img
+                                src="/projects/smartvolt/static/img/Normal.jpg"
+                                alt="Full size image"
+                                class="img-fluid d-block mx-auto"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center pt-5">Normal Condition</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Second Card -->
+            <div class="col-md-2">
+              <div
+                class="border rounded-lg overflow-hidden shadow-sm position-relative"
+                style="height: 300px; border-radius: 1rem"
+              >
+                <div class="col">
+                  <div class="fs-5 timesNewRoman">
+                    <div class="d-flex" style="justify-content: center">
+                      <img
+                        src="/projects/smartvolt/static/img/over.jpg"
+                        alt="Normal Condition"
+                        style="width: 100%; height: 180px; cursor: pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#overvoltageModal"
+                      />
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="overvoltageModal"
+                        tabindex="-1"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-dialog-centered modal-lg"
+                        >
+                          <div class="modal-content bg-transparent border-0">
+                            <div class="modal-body p-0 text-center">
+                              <img
+                                src="/projects/smartvolt/static/img/over.jpg"
+                                alt="Full size image"
+                                class="img-fluid d-block mx-auto"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center pt-5">Overvoltage Condition</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Third Card -->
+            <div class="col-md-2">
+              <div
+                class="border rounded-lg overflow-hidden shadow-sm position-relative"
+                style="height: 300px; border-radius: 1rem"
+              >
+                <div class="col">
+                  <div class="fs-5 timesNewRoman">
+                    <div class="d-flex" style="justify-content: center">
+                      <img
+                        src="/projects/smartvolt/static/img/under.jpg"
+                        alt="Normal Condition"
+                        style="width: 100%; height: 180px; cursor: pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#undervoltageModal"
+                      />
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="undervoltageModal"
+                        tabindex="-1"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-dialog-centered modal-lg"
+                        >
+                          <div class="modal-content bg-transparent border-0">
+                            <div class="modal-body p-0 text-center">
+                              <img
+                                src="/projects/smartvolt/static/img/under.jpg"
+                                alt="Full size image"
+                                class="img-fluid d-block mx-auto"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center pt-5">Undervoltage Condition</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Forth Card -->
+            <div class="col-md-2">
+              <div
+                class="border rounded-lg overflow-hidden shadow-sm position-relative"
+                style="height: 300px; border-radius: 1rem"
+              >
+                <div class="col">
+                  <div class="fs-5 timesNewRoman">
+                    <div class="d-flex" style="justify-content: center">
+                      <img
+                        src="/projects/smartvolt/static/img/reconnection.jpg"
+                        alt="Normal Condition"
+                        style="width: 100%; height: 180px; cursor: pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#reconnectModal"
+                      />
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="reconnectModal"
+                        tabindex="-1"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-dialog-centered modal-sm"
+                        >
+                          <div class="modal-content bg-transparent border-0">
+                            <div class="modal-body p-0 text-center">
+                              <img
+                                src="/projects/smartvolt/static/img/reconnection.jpg"
+                                alt="Full size image"
+                                class="img-fluid d-block mx-auto"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center pt-5">Automatic Reconnection</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <h3 class="timesNewRoman">Real-time Monitoring</h3>
-          <div class="m-5"></div>
+          <div class="row m-5">
+            <!-- First Card -->
+            <div class="col-md-2">
+              <div
+                class="border rounded-lg overflow-hidden shadow-sm position-relative"
+                style="height: 300px; border-radius: 1rem"
+              >
+                <div class="col">
+                  <div class="fs-5 timesNewRoman">
+                    <div class="d-flex" style="justify-content: center">
+                      <img
+                        src="/projects/smartvolt/static/img/realtime2.jpg"
+                        alt="Normal Condition"
+                        style="width: 100%; height: 180px; cursor: pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#realtimeModal"
+                      />
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="realtimeModal"
+                        tabindex="-1"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-dialog-centered modal-lg"
+                        >
+                          <div class="modal-content bg-transparent border-0">
+                            <div class="modal-body p-0 text-center">
+                              <img
+                                src="/projects/smartvolt/static/img/realtime2.jpg"
+                                alt="Full size image"
+                                class="img-fluid d-block mx-auto"
+                                style="scale: 2"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center pt-5">Offline Monitoring</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Second Card -->
+            <div class="col-md-2">
+              <div
+                class="border rounded-lg overflow-hidden shadow-sm position-relative"
+                style="height: 300px; border-radius: 1rem"
+              >
+                <div class="col">
+                  <div class="fs-5 timesNewRoman">
+                    <div class="d-flex" style="justify-content: center">
+                      <img
+                        src="/projects/smartvolt/static/img/realtimemonitoring.jpg"
+                        alt="Normal Condition"
+                        style="width: 100%; height: 180px; cursor: pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#realtimemonitoringModal"
+                      />
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="realtimemonitoringModal"
+                        tabindex="-1"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-dialog-centered modal-lg"
+                        >
+                          <div class="modal-content bg-transparent border-0">
+                            <div class="modal-body p-0 text-center">
+                              <img
+                                src="/projects/smartvolt/static/img/realtimemonitoring.jpg"
+                                alt="Full size image"
+                                class="img-fluid d-block mx-auto"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center pt-5">Data Comparisons</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <h3 class="timesNewRoman">Remote Monitoring</h3>
-          <div class="m-5"></div>
+          <div class="row m-5">
+            <!-- First Card -->
+            <div class="col-md-2">
+              <div
+                class="border rounded-lg overflow-hidden shadow-sm position-relative"
+                style="height: 300px; border-radius: 1rem"
+              >
+                <div class="col">
+                  <div class="fs-5 timesNewRoman">
+                    <div class="d-flex" style="justify-content: center">
+                      <img
+                        src="/projects/smartvolt/static/img/remotemonitor.jpg"
+                        alt="Normal Condition"
+                        style="width: 100%; height: 180px; cursor: pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#remotemonitorModal"
+                      />
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="remotemonitorModal"
+                        tabindex="-1"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-dialog-centered modal-lg"
+                        >
+                          <div class="modal-content bg-transparent border-0">
+                            <div class="modal-body p-0 text-center">
+                              <img
+                                src="/projects/smartvolt/static/img/remotemonitor.jpg"
+                                alt="Full size image"
+                                class="img-fluid d-block mx-auto"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center pt-5">Online Monitoring</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Second Card -->
+            <div class="col-md-2">
+              <div
+                class="border rounded-lg overflow-hidden shadow-sm position-relative"
+                style="height: 300px; border-radius: 1rem"
+              >
+                <div class="col">
+                  <div class="fs-5 timesNewRoman">
+                    <div class="d-flex" style="justify-content: center">
+                      <img
+                        src="/projects/smartvolt/static/img/remotemonitor2.jpg"
+                        alt="Normal Condition"
+                        style="width: 100%; height: 180px; cursor: pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#remotemonitor2Modal"
+                      />
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="remotemonitor2Modal"
+                        tabindex="-1"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-dialog-centered modal-lg"
+                        >
+                          <div class="modal-content bg-transparent border-0">
+                            <div class="modal-body p-0 text-center">
+                              <img
+                                src="/projects/smartvolt/static/img/remotemonitor2.jpg"
+                                alt="Full size image"
+                                class="img-fluid d-block mx-auto"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center pt-5">Data Comparisons</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <h3 class="timesNewRoman">Remote Control</h3>
-          <div class="m-5"></div>
+          <div class="row m-5">
+            <!-- First Card -->
+            <div class="col-md-2">
+              <div
+                class="border rounded-lg overflow-hidden shadow-sm position-relative"
+                style="height: 300px; border-radius: 1rem"
+              >
+                <div class="col">
+                  <div class="fs-5 timesNewRoman">
+                    <div class="d-flex" style="justify-content: center">
+                      <img
+                        src="/projects/smartvolt/static/img/remotecontrol.jpg"
+                        alt="Normal Condition"
+                        style="width: 100%; height: 180px; cursor: pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#remotecontrolModal"
+                      />
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="remotecontrolModal"
+                        tabindex="-1"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-dialog-centered modal-lg"
+                        >
+                          <div class="modal-content bg-transparent border-0">
+                            <div class="modal-body p-0 text-center">
+                              <img
+                                src="/projects/smartvolt/static/img/remotecontrol.jpg"
+                                alt="Full size image"
+                                class="img-fluid d-block mx-auto"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center pt-5">Before Manual Trip</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Second Card -->
+            <div class="col-md-2">
+              <div
+                class="border rounded-lg overflow-hidden shadow-sm position-relative"
+                style="height: 300px; border-radius: 1rem"
+              >
+                <div class="col">
+                  <div class="fs-5 timesNewRoman">
+                    <div class="d-flex" style="justify-content: center">
+                      <img
+                        src="/projects/smartvolt/static/img/remotecontrol2.jpg"
+                        alt="Normal Condition"
+                        style="width: 100%; height: 180px; cursor: pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#remotecontrol2Modal"
+                      />
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="remotecontrol2Modal"
+                        tabindex="-1"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-dialog-centered modal-lg"
+                        >
+                          <div class="modal-content bg-transparent border-0">
+                            <div class="modal-body p-0 text-center">
+                              <img
+                                src="/projects/smartvolt/static/img/remotecontrol2.jpg"
+                                alt="Full size image"
+                                class="img-fluid d-block mx-auto"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center pt-5">After Manual Trip</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- Results End -->
       </div>
